@@ -1,0 +1,4 @@
+interface:
+  display_name: "Anti-Defensive Writing"
+  short_description: "Remove caveats and write with direct confidence"
+  default_prompt: "Use $anti-defensive-writing to revise this text so it is concise, direct, and free of unnecessary caveats."
