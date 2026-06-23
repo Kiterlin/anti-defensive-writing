@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Anti-Defensive Writing</title>
+  <desc id="desc">A cover image for a Codex skill that removes unnecessary caveats and strengthens prose.</desc>
+  <rect width="1200" height="630" fill="#101820"/>
+  <rect x="52" y="52" width="1096" height="526" rx="28" fill="#F6F1E8"/>
+  <rect x="86" y="86" width="1028" height="458" rx="18" fill="#FFFFFF" stroke="#101820" stroke-width="3"/>
+  <path d="M126 162H612" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
+  <path d="M126 222H474" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
+  <path d="M126 282H552" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
+  <path d="M126 342H424" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
+  <path d="M126 402H596" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
+  <rect x="690" y="130" width="334" height="52" rx="12" fill="#D94F3D"/>
+  <rect x="690" y="218" width="334" height="52" rx="12" fill="#D94F3D"/>
+  <rect x="690" y="306" width="334" height="52" rx="12" fill="#D94F3D"/>
+  <path d="M706 156H1008" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <path d="M706 244H1008" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <path d="M706 332H1008" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <path d="M682 436H1034" stroke="#2C7A66" stroke-width="12" stroke-linecap="round"/>
+  <path d="M682 480H956" stroke="#2C7A66" stroke-width="12" stroke-linecap="round"/>
+  <text x="86" y="604" fill="#F6F1E8" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">A Codex skill for clearer, stronger, claim-forward prose.</text>
+  <text x="126" y="124" fill="#101820" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">ANTI-DEFENSIVE WRITING</text>
+  <text x="690" y="116" fill="#101820" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">remove protective clutter</text>
+  <text x="682" y="414" fill="#101820" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">keep necessary precision</text>
+  <circle cx="1068" cy="492" r="36" fill="#101820"/>
+  <path d="M1051 493L1063 505L1087 477" stroke="#F6F1E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
