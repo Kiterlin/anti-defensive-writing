@@ -4,6 +4,17 @@
 
 # Anti-Defensive Writing
 
+<p align="center">
+  <a href="README.zh-CN.md">中文说明</a>
+</p>
+
+<p align="center">
+  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
+  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
+  <img alt="Writing" src="https://img.shields.io/badge/Writing-Editing-D94F3D">
+  <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue">
+</p>
+
 Anti-Defensive Writing is a Codex skill for revising prose that over-protects itself: unnecessary caveats, disclaimers, hedges, apology-like framing, negative self-limiting claims, and explanations added only to preempt imagined objections.
 
 It keeps necessary scope and methodological precision, but makes the default posture direct, confident, and claim-forward.
@@ -57,6 +68,19 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skill/anti-defensive-writing
 ```
 
+### Ask an AI Agent to Install It
+
+There is no universal install protocol shared by every agent tool. If your tool stores skills in a custom directory, you can ask an AI agent to install this repository for you.
+
+Use a prompt like:
+
+```text
+Please install this skill from GitHub:
+https://github.com/Kiterlin/anti-defensive-writing
+
+Find my agent's skills directory, clone the repository, and copy skill/anti-defensive-writing into that skills directory. If my agent expects skills at the repository root, use the root SKILL.md instead. Do not copy logs, caches, or unrelated files.
+```
+
 ### Manual Install
 
 Clone the repository:
@@ -100,6 +124,7 @@ Make this abstract clearer, stronger, and less defensive.
 .
 |-- SKILL.md
 |-- README.md
+|-- README.zh-CN.md
 |-- install.sh
 |-- skill.json
 |-- agents/

@@ -9,6 +9,14 @@
   <path d="M126 282H552" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
   <path d="M126 342H424" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
   <path d="M126 402H596" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
+  <rect x="126" y="456" width="142" height="38" rx="19" fill="#101820"/>
+  <rect x="284" y="456" width="112" height="38" rx="19" fill="#2C7A66"/>
+  <rect x="412" y="456" width="104" height="38" rx="19" fill="#D94F3D"/>
+  <rect x="532" y="456" width="130" height="38" rx="19" fill="#F6F1E8" stroke="#101820" stroke-width="3"/>
+  <text x="151" y="481" fill="#F6F1E8" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">CODEX SKILL</text>
+  <text x="312" y="481" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">WRITING</text>
+  <text x="438" y="481" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">EDITING</text>
+  <text x="557" y="481" fill="#101820" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800">ACADEMIC</text>
   <rect x="690" y="130" width="334" height="52" rx="12" fill="#D94F3D"/>
   <rect x="690" y="218" width="334" height="52" rx="12" fill="#D94F3D"/>
   <rect x="690" y="306" width="334" height="52" rx="12" fill="#D94F3D"/>
