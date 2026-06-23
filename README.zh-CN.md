@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/cover.svg" alt="Anti-Defensive Writing" width="100%">
+  <img src="assets/cover.png" alt="Anti-Defensive Writing" width="100%">
 </p>
 
 # Anti-Defensive Writing
@@ -133,7 +133,7 @@ Use $anti-defensive-writing to revise this paragraph.
 |-- agents/
 |   `-- openai.yaml
 |-- assets/
-|   `-- cover.svg
+|   `-- cover.png
 `-- skill/
     `-- anti-defensive-writing/
         |-- SKILL.md
