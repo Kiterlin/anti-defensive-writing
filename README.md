@@ -104,19 +104,27 @@ For other agent tools, copy the same directory into that tool's skills directory
 cp -R anti-defensive-writing/skill/anti-defensive-writing <skills-dir>/
 ```
 
-## Use
+## How to Use
 
-Invoke it explicitly:
+1. Use `$anti-defensive-writing` to check whether your paper contains defensive writing.
 
-```text
-Use $anti-defensive-writing to revise this paragraph.
-```
+   Example:
 
-Or ask for the same behavior naturally:
+   ```text
+   $anti-defensive-writing Please review my paper and list every instance of defensive writing.
+   ```
 
-```text
-Make this abstract clearer, stronger, and less defensive.
-```
+2. After the AI lists all issues, review them one by one.
+
+   Decide which issues should be revised and which limitations are necessary for research scope, methodological transparency, or accuracy.
+
+3. Based on that analysis, use `$anti-defensive-writing` to revise the defensive paragraphs and sentences in your paper.
+
+   Example:
+
+   ```text
+   $anti-defensive-writing Based on the issues listed above, revise these paragraphs and sentences to remove unnecessary defensive writing while preserving necessary scope and methodological limitations.
+   ```
 
 ## Repository Layout
 

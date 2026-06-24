@@ -107,19 +107,27 @@ cp -R anti-defensive-writing/skill/anti-defensive-writing <skills-dir>/
 
 安装后重启 agent，让它重新加载 skills。
 
-## 使用
+## 使用方法
 
-显式调用：
+1. 使用 `$anti-defensive-writing` 审查论文是否存在防御性写作。
 
-```text
-Use $anti-defensive-writing to revise this paragraph.
-```
+   示例：
 
-也可以自然语言调用：
+   ```text
+   $anti-defensive-writing 请审查我的论文，列出其中存在的防御性写作问题。
+   ```
 
-```text
-把这段摘要改得更清楚、更有力，减少防御性表达。
-```
+2. AI 列出所有存在的问题后，先逐条过目一遍。
+
+   重点确认哪些问题确实需要修改，哪些限制说明属于研究范围、方法透明度或论证准确性所必需的内容。
+
+3. 根据以上分析，使用 `$anti-defensive-writing` 修改论文中存在防御性写作的段落和语句。
+
+   示例：
+
+   ```text
+   $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和语句，去掉不必要的防御性写作，同时保留必要的研究范围和方法限制。
+   ```
 
 ## 仓库结构
 
