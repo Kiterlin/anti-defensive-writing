@@ -84,7 +84,7 @@ copy_skill() {
   echo "Restart your agent if it loads skills only at startup."
 }
 
-SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd || pwd)
+SCRIPT_DIR=$(CDPATH='' cd -- "$(dirname -- "$0")" 2>/dev/null && pwd || pwd)
 
 if [ -d "$SCRIPT_DIR/$SKILL_PATH" ]; then
   copy_skill "$SCRIPT_DIR/$SKILL_PATH" "$DEST"

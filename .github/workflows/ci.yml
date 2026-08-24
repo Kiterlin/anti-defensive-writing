@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate Skill & Metadata
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Validate skill.json syntax
+        run: |
+          python -c "import json; json.load(open('skill.json'))"
+          echo "skill.json is valid JSON"
+
+      - name: Check root and subfolder skill consistency
+        run: |
+          diff -u SKILL.md skill/anti-defensive-writing/SKILL.md || {
+            echo "Error: SKILL.md and skill/anti-defensive-writing/SKILL.md are not identical!"
+            exit 1
+          }
+          diff -u agents/openai.yaml skill/anti-defensive-writing/agents/openai.yaml || {
+            echo "Error: agents/openai.yaml and skill/anti-defensive-writing/agents/openai.yaml are not identical!"
+            exit 1
+          }
+          echo "All skill mirrors are synchronized"
+
+      - name: Validate YAML files
+        run: |
+          python -c "import yaml; yaml.safe_load(open('agents/openai.yaml'))"
+          echo "YAML files are valid"
+
+      - name: Lint shell scripts with ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: "."
+          severity: warning
+          ignore_paths: ".git"
