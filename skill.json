@@ -20,6 +20,11 @@
       "script": "install.sh",
       "destination_argument": "--dest <skills-dir>",
       "command": "curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>"
+    },
+    "powershell": {
+      "script": "install.ps1",
+      "destination_argument": "-Dest <skills-dir>",
+      "command": "irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex"
     }
   },
   "tags": [

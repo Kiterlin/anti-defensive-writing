@@ -62,7 +62,7 @@ Anti-Defensive Writing 的目标是让文本更直接、更清楚、更有论证
 
 ### 一行安装
 
-安装到 Codex 默认 skills 目录：
+**macOS / Linux / WSL (sh):**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh
@@ -72,6 +72,18 @@ curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/mai
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex
+```
+
+如需指定目标 skills 安装目录：
+
+```powershell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest <skills-dir>
 ```
 
 常用示例：
@@ -155,6 +167,7 @@ $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和�
 |-- README.md
 |-- README.zh-CN.md
 |-- install.sh
+|-- install.ps1
 |-- skill.json
 |-- agents/
 |   `-- openai.yaml

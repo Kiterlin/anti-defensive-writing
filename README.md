@@ -62,7 +62,7 @@ Anti-Defensive Writing helps make academic and professional prose more direct, p
 
 ### One-Line Install
 
-Install into the default Codex skills directory:
+**macOS / Linux / WSL (sh):**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh
@@ -72,6 +72,18 @@ For another agent tool, pass its parent skills directory:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex
+```
+
+To specify a custom skills destination directory:
+
+```powershell
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest <skills-dir>
 ```
 
 Common examples:
@@ -155,6 +167,7 @@ $anti-defensive-writing Based on the issues listed above, revise these paragraph
 |-- README.md
 |-- README.zh-CN.md
 |-- install.sh
+|-- install.ps1
 |-- skill.json
 |-- agents/
 |   `-- openai.yaml
