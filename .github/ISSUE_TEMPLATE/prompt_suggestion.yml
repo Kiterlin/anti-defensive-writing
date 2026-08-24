@@ -1,0 +1,34 @@
+name: 📝 Prompt & Skill Suggestion
+description: Suggest improvements to rules, examples, or revision criteria
+title: "skill: "
+labels: ["skill-improvement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest enhancements for anti-defensive writing rules, revision triggers, or edge-case handling.
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Rule / Scenario
+      description: What specific writing pattern or prompt behavior are you focusing on?
+      placeholder: E.g., handling limitations in methods sections...
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Proposed Suggestion or Example
+      description: Provide the suggested revision rule or before/after example.
+      placeholder: |
+        Before (Defensive): ...
+        After (Improved): ...
+    validations:
+      required: true
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Rationale
+      description: Why is this change beneficial for academic/professional writing?
+    validations:
+      required: true
