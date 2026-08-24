@@ -19,6 +19,7 @@
 </p>
 
 <p align="center">
+  <img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg">
   <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
   <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
   <img alt="Writing" src="https://img.shields.io/badge/Writing-Editing-D94F3D">
