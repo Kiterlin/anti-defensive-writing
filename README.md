@@ -18,11 +18,11 @@
   ·
   <a href="#-before--after-showcase">Showcase</a>
   ·
-  <a href="#-how-to-use">How to Use</a>
+  <a href="#-examples">Examples</a>
   ·
   <a href="#-quick-install--setup">Installation</a>
   ·
-  <a href="#-examples">Examples</a>
+  <a href="#-how-to-use">How to Use</a>
 </p>
 
 <p align="center">
@@ -93,6 +93,10 @@ When writing academic papers, research proposals, or professional briefs, author
 >
 > **Direct & Stronger:**<br>
 > *This project deploys a 50-node thermal sensing network to provide neighborhood-scale surface temperature predictions within 0.5°C accuracy.*
+
+---
+
+## 📚 Examples
 
 Explore full paragraph-level before/after case studies in [`examples/`](examples/):
 - 📄 [Academic Introduction](examples/academic-introduction.md)
