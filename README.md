@@ -49,7 +49,7 @@ Anti-Defensive Writing helps make academic and professional prose more direct, p
 | Applications and reports | Essays, research proposals, grant writing, policy writing, professional reports |
 | Professional prose | Technical explanations, product copy, explanatory writing |
 
-## Example
+## Examples
 
 **Defensive**
 
@@ -58,6 +58,13 @@ Anti-Defensive Writing helps make academic and professional prose more direct, p
 **Stronger**
 
 > This paper identifies a mechanism through which platform governance reshapes participation.
+
+### Detailed Case Studies
+
+Explore full before-and-after paragraph revisions across different writing genres in [`examples/`](examples/):
+- [Academic Introduction](examples/academic-introduction.md) — Removing hesitant hedging in paper openings.
+- [Methods & Contributions](examples/methods-and-contributions.md) — Delineating scope without defensive apologies.
+- [Grant Proposals & Project Aims](examples/grant-proposal.md) — Framing hypotheses and research feasibility directly.
 
 ## Install
 
@@ -174,6 +181,10 @@ $anti-defensive-writing Based on the issues listed above, revise these paragraph
 |   `-- openai.yaml
 |-- assets/
 |   `-- cover.png
+|-- examples/
+|   |-- academic-introduction.md
+|   |-- grant-proposal.md
+|   `-- methods-and-contributions.md
 `-- skill/
     `-- anti-defensive-writing/
         |-- SKILL.md
