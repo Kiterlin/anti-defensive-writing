@@ -15,11 +15,14 @@
   ·
   <a href="#使用方法">使用方法</a>
   ·
+  <a href="#web-端与其他-agent-快速接入">Web 与其他 Agent</a>
+  ·
   <a href="#示例">示例</a>
 </p>
 
 <p align="center">
   <img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/Kiterlin/anti-defensive-writing?style=flat&color=yellow">
   <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
   <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
   <img alt="Writing" src="https://img.shields.io/badge/Writing-Editing-D94F3D">
@@ -158,6 +161,43 @@ AI 列出所有存在的问题后，先逐条过目一遍。重点确认哪些�
 
 ```text
 $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和语句，去掉不必要的防御性写作，同时保留必要的研究范围和方法限制。
+```
+
+## Web 端与其他 Agent 快速接入
+
+如果你没有使用 Codex CLI，也可以将 Anti-Defensive Writing 的核心规则直接导入到其他 AI 客户端或编辑器中：
+
+### ChatGPT / Claude 网页端（自定义指令 / Projects）
+
+将以下提示词复制到 **Custom Instructions（自定义指令）**、**System Prompt（系统提示词）** 或 **Project Knowledge（项目知识库）** 中：
+
+```text
+你是一位专注于「去防御性写作（Anti-Defensive Writing）」的专业编辑。
+在审阅或修改学术论文及专业文档时：
+1. 识别并去除防御性表达：不必要的过度免责声明、预设反驳的道歉式措辞、冗余的模态犹豫词（可能、或许、潜在）以及自我贬低的消极限制。
+2. 优先陈述核心论点、创新贡献与研究发现。
+3. 准确保留必要的科学严谨性、方法边界与适用范围，但将其客观置于恰当的分析语境中，而非作为辩解性铺垫。
+4. 保持语言直接、清晰、有力且以论点为核心（claim-forward）。
+```
+
+### Cursor / Windsurf 编辑器（`.cursorrules` / `.windsurfrules`）
+
+在项目根目录的 `.cursorrules` 或 `.windsurfrules` 中添加：
+
+```markdown
+# 去防御性写作规范（Anti-Defensive Writing）
+- 在撰写或修改文档、学术内容或项目方案时，避免防御性写作模式。
+- 消除冗余的免责与犹豫表达，同时保留客观的技术与方法精度。
+- 参考并遵循 SKILL.md 中的去防御性写作准则。
+```
+
+### Claude Code / CLI Agent（`CLAUDE.md`）
+
+在项目的 `CLAUDE.md` 中添加：
+
+```markdown
+## 写作风格指南
+- 遵循去防御性写作原则（Anti-Defensive Writing）：表达直接有力，优先呈现核心贡献，避免辩解式免责与模糊的犹豫措辞。
 ```
 
 ## 仓库结构
