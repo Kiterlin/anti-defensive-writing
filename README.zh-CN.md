@@ -2,180 +2,133 @@
   <img src="assets/cover.png" alt="Anti-Defensive Writing" width="100%">
 </p>
 
-<h1 align="center">Anti-Defensive Writing</h1>
+<h1 align="center">Anti-Defensive Writing（去防御性写作）</h1>
 
 <p align="center">
-  一个用于审查和修改防御性写作的 Codex skill。
+  <strong>以坚定、直接、精准的姿态写作。</strong><br>
+  开源 AI Agent 技能与提示词规范，专用于消除学术论文、课题申报与专业写作中冗余的犹豫措辞、辩解式免责与消极自我限制。
 </p>
 
 <p align="center">
-  <a href="README.md">English README</a>
+  <a href="README.md">🌐 English README</a>
   ·
-  <a href="#安装">安装</a>
+  <a href="#-痛点解析什么是防御性写作">痛点解析</a>
   ·
-  <a href="#使用方法">使用方法</a>
+  <a href="#-核心写作原则">核心原则</a>
   ·
-  <a href="#web-端与其他-agent-快速接入">Web 与其他 Agent</a>
+  <a href="#-经典案例对比">案例对比</a>
   ·
-  <a href="#示例">示例</a>
+  <a href="#-使用流程">使用流程</a>
+  ·
+  <a href="#-快速安装与接入">快速安装</a>
+  ·
+  <a href="#-详细案例库">案例库</a>
 </p>
 
 <p align="center">
-  <img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg">
-  <img alt="GitHub stars" src="https://img.shields.io/github/stars/Kiterlin/anti-defensive-writing?style=flat&color=yellow">
+  <a href="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Kiterlin/anti-defensive-writing?style=flat&color=yellow"></a>
   <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
   <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
-  <img alt="Writing" src="https://img.shields.io/badge/Writing-Editing-D94F3D">
   <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue">
 </p>
 
 ---
 
-## 它解决什么问题
+## 🎯 痛点解析：什么是防御性写作？
 
-防御性写作会让论文和专业文本过度预判反对意见、边界情况、读者误解或审稿批评，于是加入不必要的 caveat、免责声明、犹豫表达、自我限制和过度解释。
+在撰写学术论文、研究提案或专业报告时，作者往往出于对审稿人批评、读者误解或边界特例的过度担忧，而在论述中层层设防。这种**防御性写作（Defensive Writing）**会导致文稿冗长、气势减弱且重点模糊：
 
-Anti-Defensive Writing 的目标是让文本更直接、更清楚、更有论证姿态，同时保留真正必要的研究范围、方法限制、法律伦理限制和准确性说明。
+- **以自我限制开篇**：在阐述创新前先声明无力解决的问题（如*“虽然本文无意提供完整的理论体系……”*）。
+- **层叠模糊犹豫词**：连续使用 *“可能、或许、在某种程度上潜在影响……”*，大幅削弱论证力度。
+- **消极否定式阐述**：频繁解释文章**不是**什么，而不是清晰阐明文章**提出**了什么。
+- **分散论证重点**：在引言或结论中过早、过度堆叠道歉式免责，掩盖了核心证据与贡献。
 
-| 常见问题 | 修改方向 |
-| --- | --- |
-| 反复说明“本文不声称……” | 改成正面说明本文研究什么、解释什么、贡献什么 |
-| 贡献段先写限制 | 先给出核心贡献，把必要限制放到合适位置 |
-| 过度使用 may, could, potentially | 用更精确的证据范围和判断强度 |
-| 用长 caveat 保护一句简单论点 | 删除不增加准确性的防御性解释 |
+**Anti-Defensive Writing** 帮助作者将犹豫不决的防卫性初稿转化为**论点鲜明、逻辑自信、直奔主题**的专业文本，同时严谨保留方法论、数据范畴和伦理安全所必需的客观精度。
 
-## 适用场景
+---
 
-| 类型 | 典型文本 |
-| --- | --- |
-| 学术写作 | 论文、摘要、引言、贡献段、讨论、结论 |
-| 申请与报告 | Essay、研究计划、基金申请、政策文本、专业报告 |
-| 专业表达 | 技术解释、产品文案、说明性文字 |
+## ⚖️ 常见模式与修改方向
 
-## 示例
+| 常见防御性模式（不推荐） | 去防御性改写方向（推荐） |
+| :--- | :--- |
+| **预设辩解式免责**<br>*“本文无意提供一套完整的理论，仅探讨……”* | **直陈核心贡献**<br>*“本文阐明了治理机制重塑用户参与的具体路径。”* |
+| **以局限性作为段落开篇**<br>*“尽管本研究的样本受限于 50 个节点……”* | **优先呈现核心发现**<br>*“在 50 个基准节点测试中，该系统将响应延迟降低了 34%。”* |
+| **犹豫词层叠堆砌**<br>*“数据可能在某种程度上潜在暗示 X 或许影响 Y。”* | **精准定标证据力度**<br>*“实证数据表明，X 在此类场景下显著影响 Y。”* |
+| **消极否定式框架**<br>*“我们并非主张单一政策即可决定最终结果。”* | **积极阐明交互机制**<br>*“政策执行效果取决于制度设计与行政能力的协同交互。”* |
 
-**防御性写法**
+---
 
-> This paper is not intended to provide a comprehensive theory of platform governance, but rather to examine one specific mechanism.
+## 💡 核心写作原则
 
-**更强的写法**
+1. **核心论点先行（Lead with the Claim）**：段落以核心发现或主张切入，拒绝以辩解性铺垫开头。
+2. **正面界定范围（Positive Scope）**：直接阐明研究“分析了什么、解释了什么、对比了什么”，而非反复声明“没做什么”。
+3. **保留必要精度（Preserve Precision）**：真实的方法约束、样本边界与假设条件，应客观放置于研究方法（Methods）或局限性讨论（Limitations）章节中，避免在摘要与引言中零散道歉。
+4. **以证据定标，而非以道歉减压**：通过客观的数据边界与逻辑论证界定结论范围，而非依赖虚弱的犹豫词。
 
-> This paper identifies a mechanism through which platform governance reshapes participation.
+---
 
-### 详细案例分析
+## 🔍 经典案例对比
 
-在 [`examples/`](examples/) 目录中查看不同写作场景下的完整段落修改前后对比与分析：
-- [学术论文引言（Academic Introduction）](examples/academic-introduction.md) — 消除引言中冗余的免责与犹豫语气。
-- [研究方法与创新贡献（Methods & Contributions）](examples/methods-and-contributions.md) — 突出核心创新，客观陈述研究边界。
-- [课题申报与项目计划（Grant Proposals）](examples/grant-proposal.md) — 增强项目论证与可行性陈述的说服力。
+### 1. 学术论文引言（Academic Introduction）
 
-## 安装
+> **防御性写法：**<br>
+> *本文无意提供一套完整的平台治理理论体系，仅旨在探讨其中的某一具体机制。*
+>
+> **直接有力写法：**<br>
+> *本文阐明了平台治理重塑用户参与的具体机制。*
 
-### 一行安装
+### 2. 方法创新与实验对比（Methods & Contributions）
+
+> **防御性写法：**<br>
+> *尽管我们的评估无法涵盖所有真实场景的变体，但我们试图为模型效率提升提供初步探索。*
+>
+> **直接有力写法：**<br>
+> *在标准 32k 序列基准测试中，SparseBlock 在保持基础困惑度的同时实现了 2.4 倍的推理吞吐提升。*
+
+### 3. 课题申报与研究目标（Grant Proposals）
+
+> **防御性写法：**<br>
+> *我们当然不期望能一举解决城市热岛效应，但我们希望该监测框架或许能为城市规划提供些许帮助。*
+>
+> **直接有力写法：**<br>
+> *本项目通过布设 50 个微型传感节点，为城市规划提供精度达 0.5°C 的街区级地表温度预测模型。*
+
+查看更多涵盖完整段落的典型场景修改案例，请访问 [`examples/`](examples/) 目录：
+- 📄 [学术论文引言案例](examples/academic-introduction.md)
+- 📊 [研究方法与创新论述案例](examples/methods-and-contributions.md)
+- 📝 [课题申报与项目规划案例](examples/grant-proposal.md)
+
+---
+
+## 🚀 快速安装与接入
+
+### 1. 一键安装（Codex / CLI Agent 环境）
 
 **macOS / Linux / WSL (sh):**
-
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh
 ```
 
-安装到其他 agent 工具时，传入它的 skills 父目录：
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>
-```
-
 **Windows (PowerShell):**
-
 ```powershell
 irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex
 ```
 
-如需指定目标 skills 安装目录：
+*自定义目标安装路径：*
+```bash
+# sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>
 
-```powershell
+# PowerShell
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest <skills-dir>
 ```
 
-常用示例：
+---
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest ~/.codex/skills
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest ~/.local/share/agent/skills
-```
+### 2. Web 端与其他 Agent 快速接入
 
-### 使用 Codex Skill Installer
-
-如果你的 Codex 带有 `skill-installer` 系统 skill，可以直接从 GitHub 安装：
-
-```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo Kiterlin/anti-defensive-writing \
-  --path skill/anti-defensive-writing
-```
-
-### 让 AI 帮你安装
-
-如果你不确定自己的工具把 skills 放在哪里，可以直接让 AI 帮你安装：
-
-```text
-请帮我从 GitHub 安装这个 skill：
-https://github.com/Kiterlin/anti-defensive-writing
-
-请先判断我当前 agent 工具的 skills 目录在哪里，然后 clone 这个仓库，把 skill/anti-defensive-writing 复制到对应的 skills 目录。如果这个工具要求 skill 位于仓库根目录，就使用仓库根目录的 SKILL.md。不要复制 logs、cache 或无关文件。
-```
-
-### 手动安装
-
-克隆仓库：
-
-```bash
-git clone https://github.com/Kiterlin/anti-defensive-writing.git
-```
-
-安装到 Codex：
-
-```bash
-mkdir -p ~/.codex/skills
-cp -R anti-defensive-writing/skill/anti-defensive-writing ~/.codex/skills/
-```
-
-安装到其他 agent 工具：
-
-```bash
-cp -R anti-defensive-writing/skill/anti-defensive-writing <skills-dir>/
-```
-
-安装后重启 agent，让它重新加载 skills。
-
-## 使用方法
-
-### 1. 先审查
-
-使用 `$anti-defensive-writing` 审查论文是否存在防御性写作。
-
-```text
-$anti-defensive-writing 请审查我的论文，列出其中存在的防御性写作问题。
-```
-
-### 2. 再过目
-
-AI 列出所有存在的问题后，先逐条过目一遍。重点确认哪些问题确实需要修改，哪些限制说明属于研究范围、方法透明度或论证准确性所必需的内容。
-
-### 3. 最后修改
-
-根据以上分析，使用 `$anti-defensive-writing` 修改论文中存在防御性写作的段落和语句。
-
-```text
-$anti-defensive-writing 请根据刚才列出的问题，修改这些段落和语句，去掉不必要的防御性写作，同时保留必要的研究范围和方法限制。
-```
-
-## Web 端与其他 Agent 快速接入
-
-如果你没有使用 Codex CLI，也可以将 Anti-Defensive Writing 的核心规则直接导入到其他 AI 客户端或编辑器中：
-
-### ChatGPT / Claude 网页端（自定义指令 / Projects）
-
+#### 💬 ChatGPT / Claude 网页端（自定义指令 / Projects）
 将以下提示词复制到 **Custom Instructions（自定义指令）**、**System Prompt（系统提示词）** 或 **Project Knowledge（项目知识库）** 中：
 
 ```text
@@ -187,8 +140,7 @@ $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和�
 4. 保持语言直接、清晰、有力且以论点为核心（claim-forward）。
 ```
 
-### Cursor / Windsurf 编辑器（`.cursorrules` / `.windsurfrules`）
-
+#### 💻 Cursor / Windsurf 编辑器（`.cursorrules` / `.windsurfrules`）
 在项目根目录的 `.cursorrules` 或 `.windsurfrules` 中添加：
 
 ```markdown
@@ -198,8 +150,7 @@ $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和�
 - 参考并遵循 SKILL.md 中的去防御性写作准则。
 ```
 
-### Claude Code / CLI Agent（`CLAUDE.md`）
-
+#### 🛠️ Claude Code / CLI Agent（`CLAUDE.md`）
 在项目的 `CLAUDE.md` 中添加：
 
 ```markdown
@@ -207,51 +158,69 @@ $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和�
 - 遵循去防御性写作原则（Anti-Defensive Writing）：表达直接有力，优先呈现核心贡献，避免辩解式免责与模糊的犹豫措辞。
 ```
 
-## 仓库结构
+---
+
+## 📖 使用流程
+
+### 第 1 步：诊断识别问题
+调用 Agent 对草稿进行防御性写作专项审查：
+```text
+$anti-defensive-writing 请审查我的论文草稿，列出其中存在的防御性写作、冗余免责与过度犹豫表达。
+```
+
+### 第 2 步：审阅诊断清单
+逐条查看 Agent 列出的问题清单，区分哪些属于**纯辩解式冗余**，哪些属于**必须保留的研究范畴与精度约束**。
+
+### 第 3 步：精准重构修改
+基于分析结果，让 Agent 执行去防御性重构：
+```text
+$anti-defensive-writing 请根据刚才列出的问题，修改这些段落和语句，去除不必要的防御性表达，同时保留必要的方法限制与客观严谨度。
+```
+
+---
+
+## 📂 仓库结构
 
 ```text
 .
-|-- SKILL.md
-|-- README.md
-|-- README.zh-CN.md
-|-- install.sh
-|-- install.ps1
-|-- skill.json
+|-- SKILL.md                 # 核心 Skill 规则定义与提示词标准
+|-- README.md                # 英文说明文档
+|-- README.zh-CN.md          # 中文说明文档
+|-- install.sh               # Unix/macOS 安装脚本
+|-- install.ps1              # Windows PowerShell 安装脚本
+|-- skill.json               # Skill 规范元数据
 |-- agents/
-|   `-- openai.yaml
+|   `-- openai.yaml          # Agent 配置文件
 |-- assets/
-|   `-- cover.png
-|-- examples/
+|   `-- cover.png            # 封面图片
+|-- examples/                # 实战段落案例库
 |   |-- academic-introduction.md
 |   |-- grant-proposal.md
 |   `-- methods-and-contributions.md
 `-- skill/
     `-- anti-defensive-writing/
-        |-- SKILL.md
+        |-- SKILL.md         # 镜像纯净版 Skill
         `-- agents/
             `-- openai.yaml
 ```
 
-干净的可安装 skill 位于 `skill/anti-defensive-writing/`。
+---
 
-仓库根目录也保留了 `SKILL.md` 和 `agents/openai.yaml`，供只识别 GitHub 仓库根目录的 agent 工具使用。
+## 🧪 验证与测试
 
-`skill.json` 是机器可读 metadata，记录 skill 路径、入口文件、仓库地址和通用安装命令。
-
-## 校验
-
-如果你本地有 Codex 的 `skill-creator` 系统 skill，可以运行：
+验证元数据完整性与镜像文件一致性：
 
 ```bash
-python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skill/anti-defensive-writing
+# JSON 语法验证
+python3 -c "import json; json.load(open('skill.json'))"
+
+# 镜像文件一致性校验
+diff -u SKILL.md skill/anti-defensive-writing/SKILL.md
+diff -u agents/openai.yaml skill/anti-defensive-writing/agents/openai.yaml
 ```
 
-预期输出：
+---
 
-```text
-Skill is valid!
-```
+## 📄 开源许可
 
-## License
-
-MIT
+本项目遵循 [MIT License](LICENSE) 开源协议。
