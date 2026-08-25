@@ -1,31 +1,31 @@
 # Case Study: Methodology & Contribution Statements
 
-This example shows how to present core contributions and methodological scope clearly, avoiding the trap of burying main innovations behind defensive reservations.
-
----
+A draft contribution paragraph. The architecture, measured gains, and evaluation scope are already in the paragraph. The rewrite changes framing, not results.
 
 ## Scenario
-A machine learning paper introducing an efficient attention mechanism for long-context sequence modeling.
 
----
+A machine learning paper introducing an efficient attention mechanism for long-sequence modeling.
 
-## Before (Defensive Writing)
+## Before
 
-> It is important to emphasize at the outset that we do not claim our architecture is superior in all computational benchmarks, nor does it completely solve the quadratic memory complexity inherent to transformer architectures across every possible sequence length. Furthermore, given the prohibitive computational cost of training on massive multi-billion parameter configurations, our evaluation is unavoidably restricted to smaller standard baselines. Nevertheless, within these constrained boundaries, we attempt to introduce a sparse block-diagonal approximation that might provide modest latency improvements for intermediate sequence lengths.
+> It is important to emphasize at the outset that we do not claim our architecture is superior in all computational benchmarks, nor does it completely solve the quadratic memory complexity of transformers at every sequence length. Given the cost of training multi-billion-parameter models, our evaluation is restricted to standard 32k-token baselines. Nevertheless, we attempt to introduce SparseBlock, a sparse block-diagonal attention mechanism that might provide a modest 2.4× throughput improvement and a 42% reduction in peak VRAM, with little change in perplexity (<0.08). We are not arguing that this model is preferable for models exceeding 70B parameters, where scaling remains untested.
 
-### Issues Identified
-1. **Starting with Self-Limitation**: Leads by warning the reader about what the model cannot achieve.
-2. **Defensive Resource Framing**: Frames standard compute constraints defensively rather than stating the concrete experimental baseline objectively.
-3. **Minimizing Innovation**: Characterizes genuine efficiency improvements as *"modest"* and *"attempts"*.
+## Classification
 
----
+| Text | Function | Action |
+| :--- | :--- | :--- |
+| "do not claim... superior in all benchmarks"; "does not completely solve... every sequence length"; "It is important to emphasize at the outset" | unnecessary disclaimer | delete |
+| "attempt to introduce"; "might provide a modest" | self-undermining contribution; excessive hedging | state the contribution and the measured gains |
+| SparseBlock; block-diagonal attention; 2.4× throughput; 42% less peak VRAM; perplexity change <0.08 | contribution and evidence | lead with these |
+| evaluation on standard 32k-token baselines; scaling above 70B untested | necessary scope condition | keep as positive scope, once, without apology |
 
-## After (Direct & Claim-Forward)
+## After
 
-> This paper introduces SparseBlock, a block-diagonal attention mechanism designed to reduce memory footprint during long-sequence inference. On standard 32k-token benchmarks, SparseBlock achieves a 2.4× throughput improvement and a 42% reduction in peak VRAM consumption compared to standard self-attention, with negligible impact on perplexity (<0.08). We evaluate performance across sequences ranging from 4k to 64k tokens; scaling properties for models exceeding 70B parameters remain an open direction for future multi-node distributed benchmarking.
+> This paper introduces SparseBlock, a block-diagonal attention mechanism for long-sequence inference. On standard 32k-token benchmarks, SparseBlock improves throughput by 2.4× and reduces peak VRAM by 42%, with perplexity change below 0.08. Scaling above 70B parameters is untested.
 
----
+## What this rewrite does
 
-## Key Takeaway
-- **Put the contribution first**: Clear benchmarks and quantified gains speak for themselves.
-- **Delineate boundaries objectively**: Scope and future scaling belong in dedicated discussion/limitation sections, framed as defined parameter spaces rather than apologetic shortcomings.
+- Leads with the contribution and the measured results.
+- States the 32k-token evaluation setting as the scope of those results, not as a shortcoming.
+- Keeps "above 70B is untested" as a real limit.
+- Does not add sequence lengths, baselines, or metrics that were absent from the draft.
