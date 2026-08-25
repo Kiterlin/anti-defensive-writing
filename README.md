@@ -15,11 +15,14 @@
   ·
   <a href="#how-to-use">How to Use</a>
   ·
+  <a href="#quick-setup-for-web--other-agents">Web & Other Agents</a>
+  ·
   <a href="#example">Example</a>
 </p>
 
 <p align="center">
   <img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/Kiterlin/anti-defensive-writing?style=flat&color=yellow">
   <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
   <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
   <img alt="Writing" src="https://img.shields.io/badge/Writing-Editing-D94F3D">
@@ -165,6 +168,43 @@ Based on that analysis, use `$anti-defensive-writing` to revise the defensive pa
 
 ```text
 $anti-defensive-writing Based on the issues listed above, revise these paragraphs and sentences to remove unnecessary defensive writing while preserving necessary scope and methodological limitations.
+```
+
+## Quick Setup for Web & Other Agents
+
+If you are not using Codex CLI, you can directly import the Anti-Defensive Writing rules into your favorite AI tool or editor:
+
+### ChatGPT / Claude Web (Custom Instructions / Projects)
+
+Paste the following prompt into your **Custom Instructions**, **System Prompt**, or **Project Knowledge**:
+
+```text
+You are an expert editor specializing in Anti-Defensive Writing.
+When revising academic or professional text:
+1. Identify and eliminate defensive writing: unnecessary caveats, preemptive apologies, excessive modal hedging (may, might, could, potentially), and negative self-limiting statements.
+2. Lead with primary claims, contributions, and findings.
+3. Preserve necessary scientific precision, methodological constraints, and scope limitations, placing them in their proper analytical context without apologetic framing.
+4. Keep the prose direct, active, and claim-forward.
+```
+
+### Cursor / Windsurf (`.cursorrules` or `.windsurfrules`)
+
+Add to your project's `.cursorrules` or `.windsurfrules`:
+
+```markdown
+# Anti-Defensive Writing Rules
+- When writing or editing documentation, papers, or proposals, avoid defensive writing patterns.
+- Remove redundant disclaimers and hesitant hedging while preserving exact technical and methodological precision.
+- Follow the guidelines in SKILL.md.
+```
+
+### Claude Code / CLI Agents (`CLAUDE.md`)
+
+Add to your project's `CLAUDE.md`:
+
+```markdown
+## Writing Style
+- Apply Anti-Defensive Writing: write directly, state contributions first, and avoid apologetic caveats or vague hedges.
 ```
 
 ## Repository Layout
