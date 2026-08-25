@@ -136,46 +136,61 @@ curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/mai
 Paste this into your **Custom Instructions**, **System Prompt**, or **Project Knowledge**:
 
 ```text
-You are an expert editor specializing in Anti-Defensive Writing.
-When revising academic or professional text:
-1. Identify and eliminate defensive writing: unnecessary caveats, preemptive apologies, excessive modal hedging (may, might, could, potentially), and negative self-limiting statements.
-2. Lead with primary claims, contributions, and findings.
-3. Preserve necessary scientific precision, methodological constraints, and scope limitations, placing them in their proper analytical context without apologetic framing.
-4. Keep the prose direct, active, and claim-forward.
+You are an editor using Anti-Defensive Writing.
+When reviewing or revising academic or professional text:
+1. Classify each defensive sentence as an unnecessary disclaimer, necessary scope condition, real methodological limitation, useful conceptual contrast, evidence-based qualification, or redundant clarification.
+2. Delete disclaimers that add no evidence, scope, or necessary guidance.
+3. Lead with the claim. Convert remaining limits into positive scope. Keep real constraints once, in the right place, without apology.
+4. Replace hedging with precision. Do not add findings, numbers, or methods that are not in the source draft.
 ```
 
 #### 💻 Cursor / Windsurf (`.cursorrules` / `.windsurfrules`)
+These rules are self-contained. You do not need a `SKILL.md` in the project.
+
 ```markdown
-# Anti-Defensive Writing Rules
-- When writing or editing documentation, papers, or proposals, avoid defensive writing patterns.
-- Remove redundant disclaimers and hesitant hedging while preserving exact technical and methodological precision.
-- Follow the guidelines in SKILL.md.
+# Anti-Defensive Writing
+When writing or editing papers, proposals, or documentation:
+- Advance the claim directly. Do not open with what the text does not claim or does not attempt.
+- Classify caveats before deleting them. Keep limits that affect validity, interpretation, scope, design, or correct use.
+- Delete disclaimers that add no evidence, scope, or necessary guidance.
+- Convert remaining limits into positive scope. Replace hedging with precision.
+- Do not add findings, numbers, or methods that are not in the source draft.
 ```
 
 #### 🛠️ Claude Code / CLI Agents (`CLAUDE.md`)
 ```markdown
 ## Writing Style
-- Apply Anti-Defensive Writing: write directly, state contributions first, and avoid apologetic caveats or vague hedges.
+- Apply Anti-Defensive Writing: lead with the claim, delete unnecessary disclaimers, and keep real methodological limits once, calmly.
+- Do not add findings that are not in the source draft.
 ```
 
 ---
 
 ## 📖 How to Use
 
-### Step 1: Audit & Identify Issues
-Ask your AI agent to diagnose defensive writing patterns in your draft:
+Work in two model passes. Between them, check which limits must stay.
+
+`$anti-defensive-writing` is a **skill-loader prefix** (Codex, Claude Code, and similar). If you pasted the prompt into ChatGPT, Claude web, Cursor, or Windsurf, send the same requests as ordinary messages—do not add that prefix.
+
+### Pass 1 — Classify
+
 ```text
-$anti-defensive-writing Please review my draft and identify every instance of defensive writing, unnecessary caveats, and excessive hedging.
+Review this draft. Classify each defensive sentence as an unnecessary disclaimer, necessary scope condition, real methodological limitation, useful conceptual contrast, evidence-based qualification, or redundant clarification. List hedges that weaken the claim without adding accuracy.
 ```
 
-### Step 2: Review Findings
-Review the highlighted points. Differentiate between **unnecessary defensive padding** and **essential methodological scope conditions**.
+Skill installed: prefix with `$anti-defensive-writing`. Prompt pasted: send as a normal message.
 
-### Step 3: Revise with Precision
-Apply the anti-defensive rewrite pass:
+### Pass 2 — Check the list
+
+Keep a limitation when it affects validity, interpretation, scope, research design, or the reader's ability to use the result correctly. Delete the rest.
+
+### Pass 3 — Rewrite
+
 ```text
-$anti-defensive-writing Based on the issues identified above, revise these paragraphs to make them direct and claim-forward while maintaining methodological precision.
+Based on the classification above, rewrite these paragraphs so they are direct and claim-forward. Keep necessary methodological limits. Do not add findings, numbers, or methods that are not in the draft.
 ```
+
+Skill installed: prefix with `$anti-defensive-writing`. Prompt pasted: send as a normal follow-up.
 
 ---
 
