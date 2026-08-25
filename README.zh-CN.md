@@ -59,6 +59,13 @@ Anti-Defensive Writing 的目标是让文本更直接、更清楚、更有论证
 
 > This paper identifies a mechanism through which platform governance reshapes participation.
 
+### 详细案例分析
+
+在 [`examples/`](examples/) 目录中查看不同写作场景下的完整段落修改前后对比与分析：
+- [学术论文引言（Academic Introduction）](examples/academic-introduction.md) — 消除引言中冗余的免责与犹豫语气。
+- [研究方法与创新贡献（Methods & Contributions）](examples/methods-and-contributions.md) — 突出核心创新，客观陈述研究边界。
+- [课题申报与项目计划（Grant Proposals）](examples/grant-proposal.md) — 增强项目论证与可行性陈述的说服力。
+
 ## 安装
 
 ### 一行安装
@@ -174,6 +181,10 @@ $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和�
 |   `-- openai.yaml
 |-- assets/
 |   `-- cover.png
+|-- examples/
+|   |-- academic-introduction.md
+|   |-- grant-proposal.md
+|   `-- methods-and-contributions.md
 `-- skill/
     `-- anti-defensive-writing/
         |-- SKILL.md
