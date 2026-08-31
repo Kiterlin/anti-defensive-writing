@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/cover.png" alt="Anti-Defensive Writing" width="100%">
+  <img src="assets/cover-en.png" alt="Anti-Defensive Writing" width="100%">
 </p>
 
 <h1 align="center">Anti-Defensive Writing</h1>
@@ -188,7 +188,8 @@ $anti-defensive-writing Based on the issues identified above, revise these parag
 |-- agents/
 |   `-- openai.yaml          # Agent configuration
 |-- assets/
-|   `-- cover.png            # Banner cover image
+|   |-- cover-en.png         # English banner cover image
+|   `-- cover-zh-cn.png      # Chinese banner cover image
 |-- examples/                # Real-world paragraph case studies
 |   |-- academic-introduction.md
 |   |-- grant-proposal.md

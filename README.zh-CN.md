@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/cover.png" alt="Anti-Defensive Writing" width="100%">
+  <img src="assets/cover-zh-cn.png" alt="Anti-Defensive Writing" width="100%">
 </p>
 
 <h1 align="center">Anti-Defensive Writing（去防御性写作）</h1>
@@ -192,7 +192,8 @@ $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和�
 |-- agents/
 |   `-- openai.yaml          # Agent 配置文件
 |-- assets/
-|   `-- cover.png            # 封面图片
+|   |-- cover-en.png         # 英文封面图片
+|   `-- cover-zh-cn.png      # 中文封面图片
 |-- examples/                # 实战段落案例库
 |   |-- academic-introduction.md
 |   |-- grant-proposal.md
