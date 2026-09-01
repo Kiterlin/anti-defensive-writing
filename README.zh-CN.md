@@ -193,7 +193,9 @@ $anti-defensive-writing 请根据刚才列出的问题，修改这些段落和�
 |   `-- openai.yaml          # Agent 配置文件
 |-- assets/
 |   |-- cover-en.png         # 英文封面图片
-|   `-- cover-zh-cn.png      # 中文封面图片
+|   |-- cover-zh-cn.png      # 中文封面图片
+|   |-- star-history.svg     # Star 增长曲线图（亮色 / 暗色）
+|   `-- star-history-dark.svg
 |-- examples/                # 实战段落案例库
 |   |-- academic-introduction.md
 |   |-- grant-proposal.md
@@ -225,3 +227,21 @@ diff -u agents/openai.yaml skill/anti-defensive-writing/agents/openai.yaml
 ## 📄 开源许可
 
 本项目遵循 [MIT License](LICENSE) 开源协议。
+
+---
+
+## ⭐ Star 增长趋势
+
+<p align="center">
+  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history.svg">
+      <img alt="Kiterlin/anti-defensive-writing 的 Star 累计增长曲线" src="assets/star-history.svg" width="80%">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <sub>如果这套规范让你的表达更有力，欢迎点亮 ⭐，让更多研究者发现它。</sub>
+</p>

@@ -189,7 +189,9 @@ $anti-defensive-writing Based on the issues identified above, revise these parag
 |   `-- openai.yaml          # Agent configuration
 |-- assets/
 |   |-- cover-en.png         # English banner cover image
-|   `-- cover-zh-cn.png      # Chinese banner cover image
+|   |-- cover-zh-cn.png      # Chinese banner cover image
+|   |-- star-history.svg     # Star growth chart (light / dark themes)
+|   `-- star-history-dark.svg
 |-- examples/                # Real-world paragraph case studies
 |   |-- academic-introduction.md
 |   |-- grant-proposal.md
@@ -221,3 +223,21 @@ diff -u agents/openai.yaml skill/anti-defensive-writing/agents/openai.yaml
 ## 📄 License
 
 Distributed under the [MIT License](LICENSE).
+
+---
+
+## ⭐ Star History
+
+<p align="center">
+  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history.svg">
+      <img alt="Star history for Kiterlin/anti-defensive-writing — cumulative stars over time" src="assets/star-history.svg" width="80%">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <sub>If this skill sharpened your writing, a ⭐ helps other researchers find it.</sub>
+</p>
