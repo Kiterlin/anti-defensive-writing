@@ -1,0 +1,52 @@
+name: Star history
+
+on:
+  schedule:
+    - cron: "23 4 * * 1" # Mondays, 04:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: star-history
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh star history chart
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Regenerate chart
+        env:
+          # A PAT that can read this repo keeps the exact per-star curve. Without one
+          # the script snapshots the public star count instead, which needs no access.
+          GH_TOKEN: ${{ secrets.STAR_HISTORY_TOKEN || github.token }}
+        run: |
+          python .github/scripts/generate_star_history.py \
+            --repo "$GITHUB_REPOSITORY" \
+            --data .github/data/star-history.json \
+            --out-light assets/star-history.svg \
+            --out-dark assets/star-history-dark.svg
+
+      - name: Commit if the series changed
+        run: |
+          if git diff --quiet -- .github/data/star-history.json; then
+            echo "Star count unchanged since the last run; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/data/star-history.json \
+            assets/star-history.svg assets/star-history-dark.svg
+          git commit -m "chore: refresh star history chart"
+          git push || (git pull --rebase --autostash && git push)
