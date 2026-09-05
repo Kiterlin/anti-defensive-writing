@@ -1,31 +1,30 @@
 # Case Study: Research Proposal / Grant Application
 
-This example demonstrates how to strengthen project aims and expected impacts in research grant applications by removing self-undermining language.
-
----
+A draft statement of project aims. The deployment size, accuracy target, use, and existing quality-control steps are already in the paragraph. The rewrite changes framing, not the proposal.
 
 ## Scenario
-A grant proposal for an interdisciplinary climate resilience initiative combining remote sensing and urban planning.
 
----
+A grant proposal for an urban heat monitoring project that combines sensor deployment with planning for targeted tree-planting.
 
-## Before (Defensive Writing)
+## Before
 
-> While our proposed sensor deployment strategy is obviously subject to local weather disturbances and potential sensor calibration drift, and though we fully recognize that urban microclimates are notoriously unpredictable and cannot be perfectly modeled, we hope that our preliminary framework could perhaps offer some useful insights for municipal planners. We certainly do not expect to revolutionize municipal heat mitigation overnight, but we merely wish to explore whether real-time surface temperature logging might be somewhat helpful in guiding targeted tree-planting interventions.
+> While our proposed 50-node sensor deployment is obviously subject to local weather disturbances and potential sensor calibration drift—even with automated drift calibration and anomaly filtering in place—and though we fully recognize that urban microclimates cannot be perfectly modeled, we hope that neighborhood-scale predictions within 0.5°C could perhaps offer some useful insights for municipal planners. We certainly do not expect to revolutionize municipal heat mitigation overnight, but we merely wish to explore whether real-time surface temperature logging might be somewhat helpful in guiding targeted tree-planting.
 
-### Issues Identified
-1. **Undermining Feasibility**: Overemphasizes common operational risks before establishing the project's core methodology and value proposition.
-2. **Hesitant Aspiration**: Words like *"hope"*, *"could perhaps"*, *"merely wish to explore"*, and *"somewhat helpful"* erode reviewer confidence in the team's capabilities.
-3. **Hyperbolic Defensiveness**: Countering extreme straw-man expectations (*"revolutionize municipal heat mitigation overnight"*) rather than stating realistic, high-impact milestones.
+## Classification
 
----
+| Text | Function | Action |
+| :--- | :--- | :--- |
+| "do not expect to revolutionize... overnight"; "cannot be perfectly modeled" | unnecessary disclaimer; redundant clarification | delete |
+| "hope"; "could perhaps"; "merely wish to explore"; "somewhat helpful" | excessive hedging | replace with the aims already in the draft |
+| 50-node deployment; neighborhood-scale predictions within 0.5°C; targeted tree-planting | project aims | lead with these |
+| weather disturbances and calibration drift, with automated drift calibration and anomaly filtering already specified | real operational constraint plus existing protocol | keep the protocol as part of the design; do not open with the risk |
 
-## After (Direct & Claim-Forward)
+## After
 
-> This project deploys a high-resolution urban heat monitoring network across 50 municipal sensor nodes to guide heat-mitigation infrastructure. By pairing real-time thermal sensing with localized canopy data, the framework provides urban planners with neighborhood-scale surface temperature predictions within 0.5°C accuracy. Quality control protocols, including automated drift calibration and anomaly filtering, ensure robust sensor reliability under variable meteorological conditions.
+> This project deploys a 50-node urban heat monitoring network to guide targeted tree-planting. The network provides neighborhood-scale surface temperature predictions within 0.5°C. Automated drift calibration and anomaly filtering are part of the deployment, to manage calibration drift and weather-related sensor error.
 
----
+## What this rewrite does
 
-## Key Takeaway
-- **Establish confidence and clarity**: Replace tentative wishes with concrete project objectives and operational methodologies.
-- **Address risk with protocol**: Address technical constraints (e.g., sensor drift, weather) with engineering safeguards and quality assurance, not hesitation.
+- States the project aim and the 0.5°C target directly.
+- Treats weather and drift as design constraints already addressed in the draft, not as reasons to understate the proposal.
+- Does not add canopy data, extra infrastructure, or accuracy claims that were absent from the draft.
