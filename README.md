@@ -18,11 +18,11 @@
   ·
   <a href="#-before--after-showcase">Showcase</a>
   ·
-  <a href="#-how-to-use">How to Use</a>
+  <a href="#-examples">Examples</a>
   ·
   <a href="#-quick-install--setup">Installation</a>
   ·
-  <a href="#-examples">Examples</a>
+  <a href="#-how-to-use">How to Use</a>
 </p>
 
 <p align="center">
@@ -52,10 +52,10 @@ When writing academic papers, research proposals, or professional briefs, author
 
 | Defensive Pattern (Discouraged) | Claim-Forward Pattern (Preferred) |
 | :--- | :--- |
-| **Preemptive Apology**<br>*"This paper does not claim to offer a complete theory..."* | **Direct Contribution**<br>*"This paper identifies the key mechanism governing..."* |
-| **Starting with Limitations**<br>*"Although our sample is restricted to 50 nodes..."* | **Leading with Findings**<br>*"Across 50 test nodes, our system improves latency by 34%..."* |
-| **Stacked Modal Hedging**<br>*"The data may potentially indicate that X might influence Y."* | **Calibrated Evidence Strength**<br>*"The empirical evidence demonstrates that X influences Y."* |
-| **Negative Framing**<br>*"We do not argue that policy alone determines outcomes."* | **Positive Analytical Interaction**<br>*"Implementation outcomes depend on policy and administrative capacity."* |
+| **Preemptive Apology**<br>*"This paper is not intended to provide a comprehensive theory of platform governance, but rather to examine one specific mechanism."* | **Direct Contribution**<br>*"This paper identifies a mechanism through which platform governance reshapes participation."* |
+| **Starting with Limitations**<br>*"While the sample is limited and cannot capture every variation, it still offers useful insights."* | **Positive Scope**<br>*"The sample captures the variation most relevant to the study's theoretical question."* |
+| **Stacked Modal Hedging**<br>*"This may suggest that X could potentially influence Y."* | **Calibrated Evidence Strength**<br>*"The evidence indicates that X influences Y in these cases."* |
+| **Negative Framing**<br>*"This does not mean that policy design alone determines implementation outcomes."* | **Positive Restatement**<br>*"Implementation outcomes depend on how policy design interacts with administrative capacity."* |
 
 ---
 
@@ -73,28 +73,32 @@ When writing academic papers, research proposals, or professional briefs, author
 ### 1. Academic Paper Introduction
 
 > **Defensive:**<br>
-> *This paper is not intended to provide a comprehensive theory of platform governance, but rather to examine one specific mechanism.*
+> *Although this modest inquiry cannot resolve longstanding debates in platform governance, automated keyword filtering might potentially reduce voluntary replies by 14% among active contributors.*
 >
-> **Direct & Stronger:**<br>
-> *This paper identifies a mechanism through which platform governance reshapes participation.*
+> **Claim-forward:**<br>
+> *Automated keyword filtering reduces voluntary replies among active contributors by 14%.*
 
 ### 2. Methodological Innovation
 
 > **Defensive:**<br>
-> *While our sample cannot capture every real-world variation, we attempt to offer preliminary insights into model efficiency.*
+> *We do not claim SparseBlock is superior in all benchmarks, but it might provide a modest 2.4× throughput improvement on standard 32k-token tests.*
 >
-> **Direct & Stronger:**<br>
-> *On standard 32k-token benchmarks, SparseBlock achieves a 2.4× throughput improvement while maintaining baseline perplexity.*
+> **Claim-forward:**<br>
+> *On standard 32k-token benchmarks, SparseBlock improves throughput by 2.4×.*
 
 ### 3. Research Grant & Project Aims
 
 > **Defensive:**<br>
-> *We certainly do not expect to solve urban heat mitigation overnight, but we hope our sensor framework might be somewhat helpful.*
+> *We certainly do not expect to solve urban heat mitigation overnight, but we hope a 50-node network might perhaps provide neighborhood-scale predictions within 0.5°C.*
 >
-> **Direct & Stronger:**<br>
-> *This project deploys a 50-node thermal sensing network to provide neighborhood-scale surface temperature predictions within 0.5°C accuracy.*
+> **Claim-forward:**<br>
+> *This project deploys a 50-node network to provide neighborhood-scale surface temperature predictions within 0.5°C.*
 
-Explore full paragraph-level before/after case studies in [`examples/`](examples/):
+---
+
+## 📚 Examples
+
+Full paragraph case studies are in [`examples/`](examples/). Each draft already contains the results and constraints; the rewrite changes framing, not evidence.
 - 📄 [Academic Introduction](examples/academic-introduction.md)
 - 📊 [Methods & Contributions](examples/methods-and-contributions.md)
 - 📝 [Grant Proposals](examples/grant-proposal.md)

@@ -1,31 +1,30 @@
 # Case Study: Academic Paper Introduction
 
-This example demonstrates how Anti-Defensive Writing improves an academic paper's introduction by removing excessive disclaimers and hesitant hedging while preserving methodological boundaries.
-
----
+A draft introduction. The study's finding, data, and design constraint are already in the paragraph. The rewrite changes framing, not results.
 
 ## Scenario
-An empirical study examining how algorithmic moderation impacts online community engagement.
 
----
+An empirical study of how algorithmic moderation affects participation in online communities.
 
-## Before (Defensive Writing)
+## Before
 
-> Although it is certainly beyond the scope of this modest preliminary inquiry to resolve the longstanding debates surrounding platform governance, and while we readily acknowledge that our observational sample may suffer from unobserved confounding factors, it might cautiously be suggested that algorithmic content moderation could potentially suppress user participation under certain circumstances. We do not claim that our findings apply universally across all online ecosystems, nor do we intend to criticize existing platform policies, but we merely attempt to offer an exploratory lens through which one might observe these nuanced dynamics.
+> Although it is certainly beyond the scope of this modest preliminary inquiry to resolve the longstanding debates surrounding platform governance, and while we readily acknowledge that our observational sample from three major discussion platforms may suffer from unobserved confounding, it might cautiously be suggested that automated keyword filtering could potentially reduce voluntary replies by 14% among active contributors. We do not claim that our findings apply universally across all online ecosystems, nor do we intend to criticize existing platform policies; we merely attempt to offer an exploratory lens through which one might observe these dynamics.
 
-### Issues Identified
-1. **Prolonged Preemptive Apology**: Opens with multiple clauses listing what the paper cannot do before stating what it actually does.
-2. **Modal Hedge Stacking**: Combines *"might cautiously be suggested"*, *"could potentially"*, and *"under certain circumstances"*, diluting the finding to near meaningless hesitation.
-3. **Over-explanation of Obvious Limits**: Explicitly disclaiming universal applicability and avoiding criticism before presenting empirical data.
+## Classification
 
----
+| Text | Function | Action |
+| :--- | :--- | :--- |
+| "beyond the scope... longstanding debates"; "modest preliminary inquiry"; "do not claim... universally"; "nor do we intend to criticize" | unnecessary disclaimer | delete |
+| "might cautiously be suggested"; "could potentially"; "merely attempt" | excessive hedging | drop the hedges; state the finding |
+| automated keyword filtering; 14% fewer voluntary replies; three discussion platforms | the claim and its evidence | lead with these |
+| unobserved confounding in an observational sample | real methodological limitation | keep once, after the claim |
 
-## After (Direct & Claim-Forward)
+## After
 
-> Algorithmic content moderation significantly reshapes user participation in online communities. Using observational data from three major discussion platforms, this paper demonstrates that automated keyword filtering reduces voluntary replies by 14% among active contributors. While unobserved confounding remains a known constraint of cross-platform observational designs, our comparative event-study framework isolates the short-term engagement effects following moderation rollouts.
+> Automated keyword filtering reduces voluntary replies among active contributors by 14%. This estimate comes from observational data on three major discussion platforms. Unobserved confounding is a constraint of that design.
 
----
+## What this rewrite does
 
-## Key Takeaway
-- **Lead with the finding and contribution**: State what the study observes directly.
-- **Bound scope with evidence, not apologies**: Place methodological constraints in their proper analytical context rather than using them to cushion claims.
+- Opens with the finding instead of a list of what the paper does not do.
+- Keeps the observational sample, the three platforms, the 14% estimate, and unobserved confounding.
+- Does not add methods, effect sizes, or scope conditions that were absent from the draft.
