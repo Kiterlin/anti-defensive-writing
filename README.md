@@ -68,6 +68,17 @@ When writing academic papers, research proposals, or professional briefs, author
 
 ---
 
+## Technical Plans and SOPs
+
+- **State the plan directly:** Give the procedure, parameters, prerequisites, and findings. Remove commentary about why the answer is written a certain way.
+- **Name technical prerequisites:** Replace vague conditionals with concrete prerequisites or direct actions.
+- **Use operational language:** Express requirements as SOP steps instead of admonitions.
+- **Choose precise verbs:** Replace empty nominalizations with verbs that identify the technical operation.
+
+The [Chinese guide](README.zh-CN.md#中文技术写作与-sop) includes the original Chinese patterns and rewrite examples.
+
+---
+
 ## 🔍 Before & After Showcase
 
 ### 1. Academic Paper Introduction
