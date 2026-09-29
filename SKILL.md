@@ -108,6 +108,15 @@ Keep one paragraph, one job. Do not mix argument, caveat, apology, exception, an
 
 Use contrast only when the contrast itself is part of the argument. Avoid reflexive "not X but Y", "rather than", "instead of", "to be clear", and "it should be noted that" structures.
 
+## Technical Plans and SOPs
+
+In Chinese technical plans, SOPs, reports, and presentations:
+
+- State the procedure, parameters, prerequisites, and findings directly. Remove commentary about the answer or its composition, such as “这回答了不同问题”, “服从于XX条件”, and “用于阐明机制”.
+- Replace defensive conditionals such as “仅在……时”, “若欲……需要……”, and “在条件允许时” with a concrete prerequisite (for example, “标定前提：……”) or a direct action.
+- Use operational SOP language instead of admonitions such as “不可互相替代” and “切记不可……”. State the required handling directly, for example, “两者独立记录并平行分析”.
+- Use precise technical verbs in place of empty nominalizations such as “进行……的测量” and “关于……的表征”. Choose the verb that matches the operation, such as “标定”, “解耦”, “淬灭”, or “钳定”.
+
 ## Preferred Patterns
 
 Use patterns like:
@@ -119,8 +128,6 @@ Use patterns like:
 - "This design allows..."
 - "The results suggest..."
 - "The central contribution is..."
-- "This section explains..."
-- "The argument proceeds in three steps..."
 - "In this setting, X shapes Y by..."
 
 ## Discouraged Patterns
