@@ -1,4 +1,0 @@
-interface:
-  display_name: "Anti-Defensive Writing"
-  short_description: "中英文反防御性写作：删掉多余辩解，把观点说清楚，保留必要限定"
-  default_prompt: "Use $anti-defensive-writing to revise this text so it is concise, direct, and free of unnecessary caveats. 使用该技能修改这段文字，删掉多余辩解，直接表达观点，保留必要限定。"

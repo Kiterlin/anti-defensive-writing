@@ -1,149 +1,82 @@
+#Requires -Version 7.0
 [CmdletBinding()]
 param(
     [Parameter(Position = 0)]
-    [Alias("dest")]
     [string]$Dest,
-
-    [Alias("ref")]
-    [string]$Ref = "main",
-
-    [Alias("force")]
+    [string]$Ref = 'main',
     [switch]$Force,
-
-    [Alias("h")]
     [switch]$Help
 )
 
 $ErrorActionPreference = 'Stop'
 
-function Show-Usage {
-    @"
-Install anti-defensive-writing into an agent skills directory.
+if ($Help) {
+    @'
+Install only anti-defensive-writing/SKILL.md.
 
 Usage:
-  .\install.ps1 [-Dest <path>] [-Ref <branch/tag>] [-Force]
+  ./install.ps1 [-Dest DIR] [-Ref REF] [-Force]
 
 Options:
-  -Dest, --dest <path>  Parent skills directory. Default: `${env:CODEX_HOME}\skills or ~/.codex/skills
-  -Ref, --ref <ref>     Git ref to install from when downloading. Default: main
-  -Force, --force       Replace an existing anti-defensive-writing directory
-  -Help, -h             Show this help
+  -Dest DIR   Parent skills directory. Default: ~/.agents/skills
+  -Ref REF    Download from a branch, tag, or commit. Default: main
+  -Force      Replace the existing skill folder with SKILL.md only
+  -Help       Show this help
 
 Examples:
-  .\install.ps1
-  .\install.ps1 -Dest ~/.codex/skills
-  irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex
-  & ([scriptblock]::Create((irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest ~/.codex/skills -Force
-"@
+  ./install.ps1 -Dest ~/.agents/skills
+  ./install.ps1 -Dest ~/.codex/skills
+  ./install.ps1 -Dest ~/.claude/skills
+  ./install.ps1 -Dest .claude/skills
+'@
+    return
 }
-
-if ($Help) {
-    Show-Usage
-    exit 0
-}
-
-$Repo = "Kiterlin/anti-defensive-writing"
-$SkillName = "anti-defensive-writing"
-$SkillPath = "skill/anti-defensive-writing"
 
 if (-not $Dest) {
-    if ($env:CODEX_HOME) {
-        $Dest = Join-Path $env:CODEX_HOME "skills"
-    } else {
-        $userProfile = if ($env:USERPROFILE) { $env:USERPROFILE } else { $HOME }
-        $Dest = Join-Path $userProfile ".codex/skills"
-    }
+    $Dest = Join-Path $HOME '.agents/skills'
+} elseif ($Dest -eq '~') {
+    $Dest = $HOME
+} elseif ($Dest.StartsWith('~/') -or $Dest.StartsWith('~\')) {
+    $Dest = Join-Path $HOME $Dest.Substring(2)
+}
+if (-not $Ref) { throw 'Ref cannot be empty.' }
+
+$Dest = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($Dest)
+$skillName = 'anti-defensive-writing'
+$target = Join-Path $Dest $skillName
+$existing = Get-Item -LiteralPath $target -Force -ErrorAction SilentlyContinue
+if ($existing -and ($existing.Attributes -band [System.IO.FileAttributes]::ReparsePoint)) {
+    throw "Destination is a link: $target. Choose another directory."
+}
+if ($existing -and -not $Force) {
+    throw "Destination already exists: $target. Use -Force to replace the skill folder."
 }
 
-# Normalize ~ in path
-if ($Dest.StartsWith("~")) {
-    $userProfile = if ($env:USERPROFILE) { $env:USERPROFILE } else { $HOME }
-    $Dest = Join-Path $userProfile $Dest.Substring(1).TrimStart('\', '/')
-}
-
-function Copy-SkillDir {
-    param(
-        [string]$SourcePath,
-        [string]$TargetParentDir
-    )
-
-    $skillMd = Join-Path $SourcePath "SKILL.md"
-    if (-not (Test-Path $skillMd)) {
-        Write-Error "No SKILL.md found in $SourcePath"
-        exit 1
-    }
-
-    if (-not (Test-Path $TargetParentDir)) {
-        New-Item -ItemType Directory -Path $TargetParentDir -Force | Out-Null
-    }
-
-    $target = Join-Path $TargetParentDir $SkillName
-    if (Test-Path $target) {
-        if (-not $Force) {
-            Write-Error "Destination already exists: $target`nUse -Force to replace it."
-            exit 1
-        }
-        Remove-Item -Recurse -Force $target
-    }
-
-    $tempGuid = [System.Guid]::NewGuid().ToString("N")
-    $staging = Join-Path $TargetParentDir ".${SkillName}.tmp.$tempGuid"
-
-    try {
-        New-Item -ItemType Directory -Path $staging -Force | Out-Null
-        Copy-Item -Path "$SourcePath\*" -Destination $staging -Recurse -Force
-        Rename-Item -Path $staging -NewName $SkillName
-        Write-Host "Installed $SkillName to $target"
-        Write-Host "Restart your agent if it loads skills only at startup."
-    } catch {
-        if (Test-Path $staging) {
-            Remove-Item -Recurse -Force $staging -ErrorAction SilentlyContinue
-        }
-        throw $_
-    }
-}
-
-# Check if script is run locally inside the cloned repository
-$localSkillDir = $null
-if ($PSScriptRoot) {
-    $candidate = Join-Path $PSScriptRoot $SkillPath
-    if (Test-Path (Join-Path $candidate "SKILL.md")) {
-        $localSkillDir = $candidate
-    }
-}
-
-if ($localSkillDir) {
-    Copy-SkillDir -SourcePath $localSkillDir -TargetParentDir $Dest
-    exit 0
-}
-
-# Remote install via zip download
-$tempDir = Join-Path ([System.IO.Path]::GetTempPath()) "anti-defensive-writing-install-$([System.Guid]::NewGuid().ToString('N'))"
-New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+[System.IO.Directory]::CreateDirectory($Dest) | Out-Null
+$staging = Join-Path $Dest ".${skillName}.tmp.$([guid]::NewGuid().ToString('N'))"
+[System.IO.Directory]::CreateDirectory($staging) | Out-Null
 
 try {
-    $zipPath = Join-Path $tempDir "source.zip"
-    $zipUrl = "https://github.com/$Repo/archive/refs/heads/$Ref.zip"
-
-    try {
-        Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath -UseBasicParsing
-    } catch {
-        $zipUrl = "https://github.com/$Repo/archive/$Ref.zip"
-        Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath -UseBasicParsing
+    $skillFile = Join-Path $staging 'SKILL.md'
+    $localSource = if ($PSScriptRoot) { Join-Path $PSScriptRoot 'SKILL.md' } else { $null }
+    if ($localSource -and (Test-Path -LiteralPath $localSource -PathType Leaf) -and
+        -not $PSBoundParameters.ContainsKey('Ref')) {
+        Copy-Item -LiteralPath $localSource -Destination $skillFile
+    } else {
+        $encodedRef = [System.Uri]::EscapeDataString($Ref)
+        Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/$encodedRef/SKILL.md" -OutFile $skillFile
     }
-
-    Expand-Archive -Path $zipPath -DestinationPath $tempDir -Force
-
-    $extractedRoot = Get-ChildItem -Path $tempDir -Directory | Where-Object { $_.Name -ne "__MACOSX" } | Select-Object -First 1
-    if (-not $extractedRoot) {
-        Write-Error "Failed to extract repository archive from $zipUrl"
-        exit 1
+    if ((Get-Content -LiteralPath $skillFile -TotalCount 1) -ne '---') {
+        throw 'Invalid SKILL.md: missing YAML frontmatter.'
     }
-
-    $remoteSkillDir = Join-Path $extractedRoot.FullName $SkillPath
-    Copy-SkillDir -SourcePath $remoteSkillDir -TargetParentDir $Dest
+    # Download and validate before replacing an existing installation.
+    if (Test-Path -LiteralPath $target) {
+        Remove-Item -LiteralPath $target -Recurse -Force
+    }
+    Move-Item -LiteralPath $staging -Destination $target
+    Write-Host "Installed only $target/SKILL.md"
 } finally {
-    if (Test-Path $tempDir) {
-        Remove-Item -Recurse -Force $tempDir -ErrorAction SilentlyContinue
+    if (Test-Path -LiteralPath $staging) {
+        Remove-Item -LiteralPath $staging -Recurse -Force
     }
 }

@@ -11,27 +11,26 @@
   "entrypoint": "skill/anti-defensive-writing/SKILL.md",
   "root_entrypoint": "SKILL.md",
   "install": {
-    "codex": {
-      "path": "skill/anti-defensive-writing",
-      "destination": "${CODEX_HOME:-$HOME/.codex}/skills/anti-defensive-writing",
-      "command": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo Kiterlin/anti-defensive-writing --path skill/anti-defensive-writing"
-    },
-    "generic": {
+    "shell": {
       "script": "install.sh",
       "destination_argument": "--dest <skills-dir>",
-      "command": "curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>"
+      "command": "curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest \"$HOME/.agents/skills\""
     },
     "powershell": {
       "script": "install.ps1",
       "destination_argument": "-Dest <skills-dir>",
-      "command": "irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex"
+      "command": "& ([scriptblock]::Create((Invoke-RestMethod https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest \"$HOME/.agents/skills\""
     }
   },
   "tags": [
     "codex",
+    "claude-code",
     "agent-skill",
     "writing",
     "editing",
     "academic-writing"
+  ],
+  "installed_files": [
+    "SKILL.md"
   ]
 }

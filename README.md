@@ -1,243 +1,138 @@
-<p align="center">
-  <img src="assets/cover-en.png" alt="Anti-Defensive Writing" width="100%">
-</p>
+# Anti-Defensive Writing
 
-<h1 align="center">Anti-Defensive Writing</h1>
+[中文说明](README.zh-CN.md)
 
-<p align="center">
-  <strong>Write with authority, directness, and precision.</strong><br>
-  An open agent skill and prompt standard to eliminate excessive hedging, apologies, and defensive caveats in academic and professional prose.
-</p>
+A Chinese and English writing skill for papers, proposals, and professional text. It removes unnecessary disclaimers, repeated caveats, and self-undermining language while keeping necessary limits and the strength of the evidence.
 
-<p align="center">
-  <a href="README.zh-CN.md">🇨🇳 中文说明</a>
-  ·
-  <a href="#-the-problem-what-is-defensive-writing">The Problem</a>
-  ·
-  <a href="#-core-principles">Core Principles</a>
-  ·
-  <a href="#-before--after-showcase">Showcase</a>
-  ·
-  <a href="#-how-to-use">How to Use</a>
-  ·
-  <a href="#-quick-install--setup">Installation</a>
-  ·
-  <a href="#-examples">Examples</a>
-</p>
+The rules and examples are in [SKILL.md](SKILL.md). English rules come first, followed by Chinese rules.
 
-<p align="center">
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Kiterlin/anti-defensive-writing?style=flat&color=yellow"></a>
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
-  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
-  <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue">
-</p>
+## What gets installed
 
----
+Only this file is installed:
 
-## 🎯 The Problem: What is Defensive Writing?
-
-When writing academic papers, research proposals, or professional briefs, authors frequently anticipate reviewer objections, misunderstandings, or edge cases by over-protecting their arguments. This leads to **defensive writing**:
-
-- Opening contributions with self-limiting disclaimers (*"While we do not claim to solve..."*).
-- Stacking weak modal hedges (*"might cautiously suggest that X could potentially..."*).
-- Explaining what the paper does **not** do instead of what it **does**.
-- Diluting core insights with apologetic caveats before stating evidence.
-
-**Anti-Defensive Writing** transforms hesitant, over-caveated drafts into direct, claim-forward, and authoritative prose—while rigorously preserving necessary methodological constraints, scientific precision, and analytical boundaries.
-
----
-
-## ⚖️ Common Patterns & Revision Directions
-
-| Defensive Pattern (Discouraged) | Claim-Forward Pattern (Preferred) |
-| :--- | :--- |
-| **Preemptive Apology**<br>*"This paper does not claim to offer a complete theory..."* | **Direct Contribution**<br>*"This paper identifies the key mechanism governing..."* |
-| **Starting with Limitations**<br>*"Although our sample is restricted to 50 nodes..."* | **Leading with Findings**<br>*"Across 50 test nodes, our system improves latency by 34%..."* |
-| **Stacked Modal Hedging**<br>*"The data may potentially indicate that X might influence Y."* | **Calibrated Evidence Strength**<br>*"The empirical evidence demonstrates that X influences Y."* |
-| **Negative Framing**<br>*"We do not argue that policy alone determines outcomes."* | **Positive Analytical Interaction**<br>*"Implementation outcomes depend on policy and administrative capacity."* |
-
----
-
-## 💡 Core Principles
-
-1. **Lead with the Claim**: Open paragraphs with your core insight or discovery, not an anticipatory defense.
-2. **Define Scope Positively**: Explicitly state what the study examines, analyzes, and contributes rather than listing what it ignores.
-3. **Preserve Legitimate Precision**: Keep real constraints (sample limits, assumptions, scope bounds) in their proper analytical sections (Methods / Limitations) rather than scattering them across abstracts and introductions.
-4. **Calibrate Evidence, Not Apologies**: Express uncertainty through objective empirical boundaries, not through timid language.
-
----
-
-## 🔍 Before & After Showcase
-
-### 1. Academic Paper Introduction
-
-> **Defensive:**<br>
-> *This paper is not intended to provide a comprehensive theory of platform governance, but rather to examine one specific mechanism.*
->
-> **Direct & Stronger:**<br>
-> *This paper identifies a mechanism through which platform governance reshapes participation.*
-
-### 2. Methodological Innovation
-
-> **Defensive:**<br>
-> *While our sample cannot capture every real-world variation, we attempt to offer preliminary insights into model efficiency.*
->
-> **Direct & Stronger:**<br>
-> *On standard 32k-token benchmarks, SparseBlock achieves a 2.4× throughput improvement while maintaining baseline perplexity.*
-
-### 3. Research Grant & Project Aims
-
-> **Defensive:**<br>
-> *We certainly do not expect to solve urban heat mitigation overnight, but we hope our sensor framework might be somewhat helpful.*
->
-> **Direct & Stronger:**<br>
-> *This project deploys a 50-node thermal sensing network to provide neighborhood-scale surface temperature predictions within 0.5°C accuracy.*
-
-Explore full paragraph-level before/after case studies in [`examples/`](examples/):
-- 📄 [Academic Introduction](examples/academic-introduction.md)
-- 📊 [Methods & Contributions](examples/methods-and-contributions.md)
-- 📝 [Grant Proposals](examples/grant-proposal.md)
-
----
-
-## 🚀 Quick Install & Setup
-
-### 1. One-Line Install (Codex & Agent CLI)
-
-**macOS / Linux / WSL (sh):**
-```bash
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh
+```text
+<skills-directory>/
+└── anti-defensive-writing/
+    └── SKILL.md
 ```
 
-**Windows (PowerShell):**
+The installer downloads `SKILL.md` directly. It does not download a repository archive or install README files, scripts, images, tests, or agent configuration. You do not need Git, Python, Node.js, or a package manager. On macOS/Linux/WSL, use `sh` and `curl`; on Windows, use PowerShell 7.
+
+## Choose a directory
+
+| Location | User installation: all projects | Project installation: current project |
+| --- | --- | --- |
+| Current Codex skill directory | `~/.agents/skills` | `.agents/skills` |
+| Older Codex skill directory | `~/.codex/skills` | `.codex/skills` |
+| Claude Code skill directory | `~/.claude/skills` | `.claude/skills` |
+
+`~` means your home directory. Relative paths are resolved from the directory where you run the installer. For a project installation, run it from the project root.
+
+Current [Codex documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills) recommends `.agents/skills`. The installer also accepts `.codex/skills`, the location used in [earlier Codex guidance](https://developers.openai.com/blog/eval-skills); use it if your Codex version loads that directory. [Claude Code](https://code.claude.com/docs/en/skills#choose-where-skills-load) loads `.claude/skills`.
+
+The default is `~/.agents/skills`. Choose the directory your agent reads.
+
+## Install on macOS / Linux / WSL
+
+Choose **one** command.
+
+### `.agents/skills`
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills"
+```
+
+### `.codex/skills`
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.codex/skills"
+```
+
+### `.claude/skills`
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.claude/skills"
+```
+
+For the current project, use a relative destination. For example:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest ".claude/skills"
+```
+
+Replace `.claude/skills` with `.agents/skills` or `.codex/skills` as needed. Any other directory can also be passed to `--dest`.
+
+## Install on Windows
+
+Open **PowerShell 7** (`pwsh`). Set `$skillsDir` to the directory you want, then run:
+
 ```powershell
-irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex
+$skillsDir = "$HOME/.agents/skills"
+$installSkill = [scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1'))
+& $installSkill -Dest $skillsDir
 ```
 
-*Custom skills directory:*
-```bash
-# sh
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>
+For another user installation, set `$skillsDir` to `"$HOME/.codex/skills"` or `"$HOME/.claude/skills"`. For the current project, use `".agents/skills"`, `".codex/skills"`, or `".claude/skills"` from the project root.
 
-# PowerShell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest <skills-dir>
+The downloaded installer runs in memory; it is not saved in the skill folder.
+
+## Update an existing installation
+
+An existing skill folder is left untouched unless you pass `--force` (shell) or `-Force` (PowerShell). This replaces that skill folder with only the new `SKILL.md`, removing any old files in that folder. The new file is downloaded and checked before replacement; a download failure leaves the existing installation intact.
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills" --force
 ```
 
----
+In PowerShell, reuse `$installSkill` and `$skillsDir` from the installation example:
 
-### 2. Universal Setup for Web AI & Code Editors
+```powershell
+& $installSkill -Dest $skillsDir -Force
+```
 
-#### 💬 ChatGPT / Claude Web (Custom Instructions / Projects)
-Paste this into your **Custom Instructions**, **System Prompt**, or **Project Knowledge**:
+To install a branch, tag, or commit, add `--ref <ref>` or `-Ref <ref>`.
+
+## Manual installation
+
+Create `anti-defensive-writing` inside your chosen skills directory. Save [the raw SKILL.md](https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/SKILL.md) into that folder as `SKILL.md`. Nothing else is required.
+
+## Use the skill
+
+In Codex:
 
 ```text
-You are an expert editor specializing in Anti-Defensive Writing.
-When revising academic or professional text:
-1. Identify and eliminate defensive writing: unnecessary caveats, preemptive apologies, excessive modal hedging (may, might, could, potentially), and negative self-limiting statements.
-2. Lead with primary claims, contributions, and findings.
-3. Preserve necessary scientific precision, methodological constraints, and scope limitations, placing them in their proper analytical context without apologetic framing.
-4. Keep the prose direct, active, and claim-forward.
+$anti-defensive-writing Revise these paragraphs. Remove unnecessary defensive language and preserve the evidence and necessary qualifications.
 ```
 
-#### 💻 Cursor / Windsurf (`.cursorrules` / `.windsurfrules`)
-```markdown
-# Anti-Defensive Writing Rules
-- When writing or editing documentation, papers, or proposals, avoid defensive writing patterns.
-- Remove redundant disclaimers and hesitant hedging while preserving exact technical and methodological precision.
-- Follow the guidelines in SKILL.md.
-```
-
-#### 🛠️ Claude Code / CLI Agents (`CLAUDE.md`)
-```markdown
-## Writing Style
-- Apply Anti-Defensive Writing: write directly, state contributions first, and avoid apologetic caveats or vague hedges.
-```
-
----
-
-## 📖 How to Use
-
-### Step 1: Audit & Identify Issues
-Ask your AI agent to diagnose defensive writing patterns in your draft:
-```text
-$anti-defensive-writing Please review my draft and identify every instance of defensive writing, unnecessary caveats, and excessive hedging.
-```
-
-### Step 2: Review Findings
-Review the highlighted points. Differentiate between **unnecessary defensive padding** and **essential methodological scope conditions**.
-
-### Step 3: Revise with Precision
-Apply the anti-defensive rewrite pass:
-```text
-$anti-defensive-writing Based on the issues identified above, revise these paragraphs to make them direct and claim-forward while maintaining methodological precision.
-```
-
----
-
-## 📂 Repository Layout
+In Claude Code:
 
 ```text
-.
-|-- SKILL.md                 # Primary skill definition & prompt rules
-|-- README.md                # English documentation
-|-- README.zh-CN.md          # Chinese documentation
-|-- install.sh               # Unix installation script
-|-- install.ps1              # Windows PowerShell installation script
-|-- skill.json               # Package metadata for skill package managers
-|-- agents/
-|   `-- openai.yaml          # Agent configuration
-|-- assets/
-|   |-- cover-en.png         # English banner cover image
-|   |-- cover-zh-cn.png      # Chinese banner cover image
-|   |-- star-history.svg     # Star growth chart (light / dark themes)
-|   `-- star-history-dark.svg
-|-- examples/                # Real-world paragraph case studies
-|   |-- academic-introduction.md
-|   |-- grant-proposal.md
-|   `-- methods-and-contributions.md
-`-- skill/
-    `-- anti-defensive-writing/
-        |-- SKILL.md         # Mirrored clean installable skill
-        `-- agents/
-            `-- openai.yaml
+/anti-defensive-writing Revise these paragraphs. Remove unnecessary defensive language and preserve the evidence and necessary qualifications.
 ```
 
----
+You can also ask the agent to use the skill by name. If the installed skill does not appear, restart the agent. For web chat tools, paste or upload `SKILL.md` as instructions instead of installing it in a local directory.
 
-## 🧪 Validation
+The skill covers direct claims, positive scope, precise uncertainty, paper structure, experiment roles, and unfavorable results. It keeps necessary limitations and does not turn associations into causal claims or add facts to make a sentence stronger.
 
-Verify skill metadata and mirror consistency:
+Before/after writing examples are available in [examples/](examples/): [introductions](examples/academic-introduction.md), [methods and contributions](examples/methods-and-contributions.md), and [grant proposals](examples/grant-proposal.md).
 
-```bash
-# JSON validation
-python3 -c "import json; json.load(open('skill.json'))"
+## Repository layout
 
-# Mirror consistency check
-diff -u SKILL.md skill/anti-defensive-writing/SKILL.md
-diff -u agents/openai.yaml skill/anti-defensive-writing/agents/openai.yaml
+```text
+SKILL.md                         # Rules; source of truth
+skill/anti-defensive-writing/
+└── SKILL.md                      # Single-file installable mirror
+README.md / README.zh-CN.md       # Installation and usage
+install.sh / install.ps1          # Installers; never installed as skill files
+skill.json                       # Package metadata
+examples/                        # Writing examples; not installed
+LICENSE                          # MIT license
+.github/                         # CI and contribution templates; not installed
+tests/                           # Installer checks; not installed
 ```
 
----
+The installable mirror stays identical to the root `SKILL.md` for tools that install a skill directory directly. When using another installer, select `skill/anti-defensive-writing`, rather than the repository root.
 
-## 📄 License
+## License
 
-Distributed under the [MIT License](LICENSE).
-
----
-
-## ⭐ Star History
-
-<p align="center">
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history.svg">
-      <img alt="Star history for Kiterlin/anti-defensive-writing — cumulative stars over time" src="assets/star-history.svg" width="80%">
-    </picture>
-  </a>
-</p>
-
-<p align="center">
-  <sub>If this skill sharpened your writing, a ⭐ helps other researchers find it.</sub>
-</p>
+[MIT](LICENSE).
