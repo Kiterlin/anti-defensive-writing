@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+![反防御性写作：删除不必要的免责声明，保留必要限定，让表达更直接、有力、准确。](assets/anti-defensive-writing-zh-CN.png)
+
 用于论文、项目申请和专业文本的中英文写作技能。删掉多余辩解、反复强调的局限和自我贬低，保留必要限定和证据应有的强度。
 
 完整规则和示例见 [SKILL.md](SKILL.md)，按“英文主规则、英文补充、中文主规则、中文补充”排列。
@@ -126,6 +128,7 @@ README.md / README.zh-CN.md       # 安装与使用说明
 install.sh / install.ps1          # 安装入口，不进入技能目录
 skill.json                       # 包元数据
 examples/                        # 写作案例，不随技能安装
+assets/                          # README 概览图片，不随技能安装
 LICENSE                          # MIT 许可证
 .github/                         # CI 与贡献模板，不随技能安装
 tests/                           # 安装验证，不随技能安装

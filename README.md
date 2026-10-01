@@ -2,6 +2,8 @@
 
 [中文说明](README.zh-CN.md)
 
+![Anti-Defensive Writing: remove unnecessary disclaimers, preserve necessary limits, and write more directly and clearly.](assets/anti-defensive-writing-en.png)
+
 A Chinese and English writing skill for papers, proposals, and professional text. It removes unnecessary disclaimers, repeated caveats, and self-undermining language while keeping necessary limits and the strength of the evidence.
 
 The rules and examples are in [SKILL.md](SKILL.md). English rules come first, followed by Chinese rules.
@@ -126,6 +128,7 @@ README.md / README.zh-CN.md       # Installation and usage
 install.sh / install.ps1          # Installers; never installed as skill files
 skill.json                       # Package metadata
 examples/                        # Writing examples; not installed
+assets/                          # README overview images; not installed
 LICENSE                          # MIT license
 .github/                         # CI and contribution templates; not installed
 tests/                           # Installer checks; not installed
