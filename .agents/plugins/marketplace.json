@@ -1,0 +1,20 @@
+{
+  "name": "anti-defensive-writing",
+  "interface": {
+    "displayName": "Anti-Defensive Writing"
+  },
+  "plugins": [
+    {
+      "name": "anti-defensive-writing",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

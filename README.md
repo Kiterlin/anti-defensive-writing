@@ -129,6 +129,19 @@ Revising text with Anti-Defensive Writing follows a formal 5-stage transformatio
 
 ## Quickstart
 
+### Native Codex Plugin (Git Marketplace)
+
+In Codex, open **Plugins → Add → Add Marketplace**, choose **Add from a repository**, and enter `https://github.com/Kiterlin/anti-defensive-writing`. Sync and install **Anti-Defensive Writing**. With a Codex CLI that supports plugins:
+
+```sh
+codex plugin marketplace add Kiterlin/anti-defensive-writing
+codex plugin add anti-defensive-writing@anti-defensive-writing
+```
+
+Codex tracks the Git marketplace's default branch and refreshes installed plugins when it detects a new commit, including changes only to `skill/anti-defensive-writing/SKILL.md`. The plugin references that existing directory; no plugin version bump is required. Updates are checked by Codex during startup; to refresh explicitly, run `codex plugin marketplace upgrade anti-defensive-writing`. Start a new chat to use the refreshed skill.
+
+The native plugin uses a Git-backed cache. The single-file deployment described below applies to the standalone installers.
+
 ### Deployment Footprint
 
 The installation is engineered to be **minimal, hermetic, and zero-overhead**. Only a single specification file is deployed into your target skills environment:

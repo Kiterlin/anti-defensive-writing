@@ -1,0 +1,11 @@
+{
+  "name": "anti-defensive-writing",
+  "description": "Reduce defensive writing while preserving necessary precision in academic and technical prose.",
+  "skills": "./skill/anti-defensive-writing",
+  "interface": {
+    "displayName": "Anti-Defensive Writing",
+    "shortDescription": "Write clear, evidence-bounded academic and technical prose.",
+    "developerName": "Kiterlin",
+    "category": "Productivity"
+  }
+}
