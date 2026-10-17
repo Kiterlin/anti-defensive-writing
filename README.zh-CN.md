@@ -137,6 +137,19 @@
 
 ## 快速安装 / Quickstart
 
+### Codex 原生插件（Git 插件市场）
+
+在 Codex 中打开 **Plugins → Add → Add Marketplace**，选择 **Add from a repository**，输入 `https://github.com/Kiterlin/anti-defensive-writing`，同步后安装 **Anti-Defensive Writing**。支持插件的 Codex CLI 也可以运行：
+
+```sh
+codex plugin marketplace add Kiterlin/anti-defensive-writing
+codex plugin add anti-defensive-writing@anti-defensive-writing
+```
+
+Codex 跟踪 Git 市场的默认分支，检测到新提交时刷新已安装插件，包括仅修改 `skill/anti-defensive-writing/SKILL.md` 的提交。插件直接引用该现有目录，无需同步插件版本号。Codex 在启动时检查更新；也可运行 `codex plugin marketplace upgrade anti-defensive-writing` 显式刷新。刷新后在新对话中使用技能。
+
+原生插件使用 Git 缓存；下文的单文件部署说明适用于独立安装脚本。
+
 ### 极简部署架构
 
 安装过程设计为**单文件、零侵入、零依赖**。智能体技能目录仅部署单个核心规则文件：
