@@ -108,6 +108,17 @@ Keep one paragraph, one job. Do not mix argument, caveat, apology, exception, an
 
 Use contrast only when the contrast itself is part of the argument. Avoid reflexive "not X but Y", "rather than", "instead of", "to be clear", and "it should be noted that" structures.
 
+## Technical Plans and SOPs
+
+In Chinese technical plans, SOPs, reports, and presentations:
+
+Remove redundancy and admonitory tone while preserving technical meaning, applicability conditions, prohibitions, and operational purpose. Do not change the operation to make the text sound more concise or specialized.
+
+- **State the plan directly:** Give the procedure, parameters, prerequisites, and findings. Remove commentary about the writing only when it adds no substantive information. Keep phrases such as “用于阐明机制” when they state a real research purpose.
+- **Name technical prerequisites:** Replace vague wording such as “在条件允许时” with concrete prerequisites supported by the draft, for example, “标定前提：……”. Keep necessary conditions expressed by “仅在……时” or “若欲……需要……”, or rewrite them equivalently. Do not replace them with an unconditional action; identify missing conditions when they are unspecified.
+- **Use operational language:** State the required handling directly and remove admonitory wording such as “切记”, while retaining necessary prohibitions and technical conclusions. Keep “不可互相替代” when it expresses a real restriction. Use “两者独立记录并平行分析” only when the procedure calls for it; this does not convey non-interchangeability.
+- **Choose precise verbs:** Simplify redundant phrasing such as “进行……的测量” to “测量……”. “测量” and “表征” are valid technical verbs. Use “标定”, “解耦”, “淬灭”, or “钳定” only when they describe the actual operation; do not substitute a different operation to sound more specialized.
+
 ## Preferred Patterns
 
 Use patterns like:
@@ -119,8 +130,6 @@ Use patterns like:
 - "This design allows..."
 - "The results suggest..."
 - "The central contribution is..."
-- "This section explains..."
-- "The argument proceeds in three steps..."
 - "In this setting, X shapes Y by..."
 
 ## Discouraged Patterns
@@ -387,6 +396,17 @@ Examples illustrate phrasing; they do not supply facts. Do not add data, mechani
 
 需要区分两种观点或解释差异时，再使用对比。不要习惯性地套用“不是 X，而是 Y”“与其说……不如说……”“需要澄清的是”“值得注意的是”。
 
+## 中文技术写作与 SOP
+
+适用于中文技术方案、SOP、报告和演示文稿。
+
+改写只消除冗余和说教语气，必须保留原文的技术含义、适用条件、禁止事项与操作目的；不得为追求简洁或专业感改变操作含义。
+
+- **直接呈现方案**：写明操作、参数、前置条件和结果。删除不提供实质信息的写作说明；“用于阐明机制”等表述若说明真实研究目的，应予保留。
+- **明确技术前提**：将“在条件允许时”等含糊表达改为原文有依据的具体前提，如“标定前提：……”。“仅在……时”“若欲……需要……”若承载必要条件，应保留或等义改写，不得直接改成执行动作而丢失限制；条件不明时应指出缺失信息。
+- **采用 SOP 语言**：直接说明操作规范，删去“切记”等说教语气，同时保留必要的禁止事项和技术结论。“不可互相替代”若表达真实限制，应保留；“两者独立记录并平行分析”仅在符合原操作要求时使用，不能替代不可互换的结论。
+- **使用准确技术动词**：将“进行……的测量”等冗余表达简化为“测量……”。“测量”“表征”本身就是准确动词；只有原操作确实对应“标定”“解耦”“淬灭”或“钳定”时才使用这些词，不得为显得专业而替换操作含义。
+
 ## 推荐句式
 
 - “本文研究……”
@@ -396,8 +416,6 @@ Examples illustrate phrasing; they do not supply facts. Do not add data, mechani
 - “该设计可以……”
 - “结果提示……”
 - “主要贡献在于……”
-- “本节解释……”
-- “下文分三步论证……”
 - “在这些条件下，X 通过……影响 Y。”
 
 ## 应避免的句式

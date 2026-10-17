@@ -61,6 +61,21 @@ The framework establishes four fundamental pillars for rigorous, claim-forward a
 
 ---
 
+## Technical Plans and SOPs
+
+In Chinese technical plans, SOPs, reports, and presentations:
+
+Remove redundancy and admonitory tone while preserving technical meaning, applicability conditions, prohibitions, and operational purpose. Do not change the operation to make the text sound more concise or specialized.
+
+- **State the plan directly:** Give the procedure, parameters, prerequisites, and findings. Remove commentary about the writing only when it adds no substantive information. Keep phrases such as “用于阐明机制” when they state a real research purpose.
+- **Name technical prerequisites:** Replace vague wording such as “在条件允许时” with concrete prerequisites supported by the draft, for example, “标定前提：……”. Keep necessary conditions expressed by “仅在……时” or “若欲……需要……”, or rewrite them equivalently. Do not replace them with an unconditional action; identify missing conditions when they are unspecified.
+- **Use operational language:** State the required handling directly and remove admonitory wording such as “切记”, while retaining necessary prohibitions and technical conclusions. Keep “不可互相替代” when it expresses a real restriction. Use “两者独立记录并平行分析” only when the procedure calls for it; this does not convey non-interchangeability.
+- **Choose precise verbs:** Simplify redundant phrasing such as “进行……的测量” to “测量……”. “测量” and “表征” are valid technical verbs. Use “标定”, “解耦”, “淬灭”, or “钳定” only when they describe the actual operation; do not substitute a different operation to sound more specialized.
+
+The [Chinese guide](README.zh-CN.md#中文技术写作与-sop) includes the Chinese rules and examples.
+
+---
+
 ## Comparative Analysis
 
 The table below contrasts conventional defensive drafts against revisions generated under the **Anti-Defensive Writing** paradigm across standard scholarly contexts.
