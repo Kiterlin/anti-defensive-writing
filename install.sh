@@ -32,12 +32,18 @@ HELP
 while [ "$#" -gt 0 ]; do
   case "$1" in
     --dest)
-      [ "$#" -ge 2 ] && [ -n "$2" ] || { echo "Missing value for --dest" >&2; exit 2; }
+      if [ "$#" -lt 2 ] || [ -z "$2" ]; then
+        echo "Missing value for --dest" >&2
+        exit 2
+      fi
       DEST=$2
       shift 2
       ;;
     --ref)
-      [ "$#" -ge 2 ] && [ -n "$2" ] || { echo "Missing value for --ref" >&2; exit 2; }
+      if [ "$#" -lt 2 ] || [ -z "$2" ]; then
+        echo "Missing value for --ref" >&2
+        exit 2
+      fi
       REF=$2
       REF_EXPLICIT=1
       shift 2
