@@ -1,254 +1,351 @@
-<p align="center">
-  <img src="assets/cover-en.png" alt="Anti-Defensive Writing" width="100%">
-</p>
+<div align="center">
 
-<h1 align="center">Anti-Defensive Writing</h1>
+# Anti-Defensive Writing
+### Calibrated Assertiveness & Positive Scope for Academic and Technical Prose
+
+[![Specification: SKILL.md](https://img.shields.io/badge/Specification-SKILL.md-blue.svg?style=flat-square)](SKILL.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+[![Platform: Codex](https://img.shields.io/badge/Agent-Codex-000000.svg?style=flat-square&logo=openai)](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
+[![Platform: Claude Code](https://img.shields.io/badge/Agent-Claude%20Code-d97706.svg?style=flat-square&logo=anthropic)](https://code.claude.com/docs/en/skills#choose-where-skills-load)
+[![Environment](https://img.shields.io/badge/Environment-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg?style=flat-square)](#quickstart)
+[![Language](https://img.shields.io/badge/Language-English%20%7C%20%E4%B8%AD%E6%96%87-blueviolet.svg?style=flat-square)](#)
 
 <p align="center">
-  <strong>Write with authority, directness, and precision.</strong><br>
-  An open agent skill and prompt standard to eliminate excessive hedging, apologies, and defensive caveats in academic and professional prose.
-</p>
-
-<p align="center">
-  <a href="README.zh-CN.md">🇨🇳 中文说明</a>
-  ·
-  <a href="#-the-problem-what-is-defensive-writing">The Problem</a>
-  ·
-  <a href="#-core-principles">Core Principles</a>
-  ·
-  <a href="#-before--after-showcase">Showcase</a>
-  ·
-  <a href="#-how-to-use">How to Use</a>
-  ·
-  <a href="#-quick-install--setup">Installation</a>
-  ·
-  <a href="#-examples">Examples</a>
+  <a href="#abstract"><b>Abstract</b></a> •
+  <a href="#core-principles"><b>Core Principles</b></a> •
+  <a href="#comparative-analysis"><b>Comparative Analysis</b></a> •
+  <a href="#rewrite-pipeline"><b>Rewrite Pipeline</b></a> •
+  <a href="#quickstart"><b>Quickstart</b></a> •
+  <a href="#agent-interface"><b>Agent Interface</b></a> •
+  <a href="#case-studies"><b>Case Studies</b></a> •
+  <a href="#citation"><b>BibTeX</b></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Kiterlin/anti-defensive-writing?style=flat&color=yellow"></a>
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
-  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
-  <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue">
+  <b>English</b> | <a href="README.zh-CN.md"><b>简体中文</b></a>
 </p>
 
 ---
 
-## 🎯 The Problem: What is Defensive Writing?
+<p align="center">
+  <img src="assets/anti-defensive-writing-en.png" width="92%" alt="Anti-Defensive Writing Paradigm" />
+</p>
+<p align="center">
+  <em><b>Figure 1: The Anti-Defensive Writing Paradigm.</b> Systematically removing premature apologies, redundant disclaimers, and layered hedges while rigorously anchoring empirical scope and methodological boundaries.</em>
+</p>
 
-When writing academic papers, research proposals, or professional briefs, authors frequently anticipate reviewer objections, misunderstandings, or edge cases by over-protecting their arguments. This leads to **defensive writing**:
-
-- Opening contributions with self-limiting disclaimers (*"While we do not claim to solve..."*).
-- Stacking weak modal hedges (*"might cautiously suggest that X could potentially..."*).
-- Explaining what the paper does **not** do instead of what it **does**.
-- Diluting core insights with apologetic caveats before stating evidence.
-
-**Anti-Defensive Writing** transforms hesitant, over-caveated drafts into direct, claim-forward, and authoritative prose—while rigorously preserving necessary methodological constraints, scientific precision, and analytical boundaries.
+</div>
 
 ---
 
-## ⚖️ Common Patterns & Revision Directions
+## Abstract
 
-| Defensive Pattern (Discouraged) | Claim-Forward Pattern (Preferred) |
-| :--- | :--- |
-| **Preemptive Apology**<br>*"This paper does not claim to offer a complete theory..."* | **Direct Contribution**<br>*"This paper identifies the key mechanism governing..."* |
-| **Starting with Limitations**<br>*"Although our sample is restricted to 50 nodes..."* | **Leading with Findings**<br>*"Across 50 test nodes, our system improves latency by 34%..."* |
-| **Stacked Modal Hedging**<br>*"The data may potentially indicate that X might influence Y."* | **Calibrated Evidence Strength**<br>*"The empirical evidence demonstrates that X influences Y."* |
-| **Negative Framing**<br>*"We do not argue that policy alone determines outcomes."* | **Positive Analytical Interaction**<br>*"Implementation outcomes depend on policy and administrative capacity."* |
+> **Abstract** — Scholarly and technical communication is frequently weakened by *defensive writing*: an authorial posture characterized by pre-emptive apologies, repetitive disclaimers, stacked modal hedges, and negative self-deprecation. While intended to ward off hypothetical criticism, defensive habits dilute the empirical strength of claims and obscure core scientific contributions.
+> 
+> **Anti-Defensive Writing** introduces an agentic skill specification that systematically diagnoses and eliminates defensive cognitive overhead while strictly preserving methodological validity, empirical scope, and ethical/legal boundaries. By replacing defensive disclaimers with positive scope definitions and calibrating uncertainty to observed evidence, this framework enables researchers and professionals to communicate findings with authoritative clarity, structural focus, and maximum signal-to-noise ratio.
+
+The complete operational rulebook and multilingual instructions are codified in [**SKILL.md**](SKILL.md) (comprising English Core Rules, English Extended Guidelines, Chinese Core Rules, and Chinese Extended Guidelines).
 
 ---
 
-## 💡 Core Principles
+## Core Principles
 
-1. **Lead with the Claim**: Open paragraphs with your core insight or discovery, not an anticipatory defense.
-2. **Define Scope Positively**: Explicitly state what the study examines, analyzes, and contributes rather than listing what it ignores.
-3. **Preserve Legitimate Precision**: Keep real constraints (sample limits, assumptions, scope bounds) in their proper analytical sections (Methods / Limitations) rather than scattering them across abstracts and introductions.
-4. **Calibrate Evidence, Not Apologies**: Express uncertainty through objective empirical boundaries, not through timid language.
+The framework establishes four fundamental pillars for rigorous, claim-forward academic communication:
+
+| Pillar | Academic Posture | Operational Directive |
+| :--- | :--- | :--- |
+| **🎯 Claim-Forward Articulation** | Assertive & Direct | Lead paragraphs and contribution sections with empirical discoveries and theoretical arguments, rather than defensive preambles. |
+| **📐 Positive Scope Delimitation** | Constructive & Bounded | Define boundaries by stating what the investigation *does* analyze, test, and explain—abandoning reflexive *"We do not claim that..."* formulations. |
+| **⚖️ Calibrated Uncertainty** | Rigorous & Precise | Differentiate between legitimate empirical limits and timid hedge stacking (*"may potentially suggest"*); anchor uncertainty directly to concrete design constraints. |
+| **🏗️ Structural Separation of Concerns** | Modular & Cohesive | Place necessary methodological limitations in dedicated sections (Methods, Discussion, Limitations), preventing dilution of abstracts, introductions, and conclusions. |
 
 ---
 
 ## Technical Plans and SOPs
 
-- **State the plan directly:** Give the procedure, parameters, prerequisites, and findings. Remove commentary about why the answer is written a certain way.
-- **Name technical prerequisites:** Replace vague conditionals with concrete prerequisites or direct actions.
-- **Use operational language:** Express requirements as SOP steps instead of admonitions.
-- **Choose precise verbs:** Replace empty nominalizations with verbs that identify the technical operation.
+In Chinese technical plans, SOPs, reports, and presentations:
 
-The [Chinese guide](README.zh-CN.md#中文技术写作与-sop) includes the original Chinese patterns and rewrite examples.
+Remove redundancy and admonitory tone while preserving technical meaning, applicability conditions, prohibitions, and operational purpose. Do not change the operation to make the text sound more concise or specialized.
 
----
+- **State the plan directly:** Give the procedure, parameters, prerequisites, and findings. Remove commentary about the writing only when it adds no substantive information. Keep phrases such as “用于阐明机制” when they state a real research purpose.
+- **Name technical prerequisites:** Replace vague wording such as “在条件允许时” with concrete prerequisites supported by the draft, for example, “标定前提：……”. Keep necessary conditions expressed by “仅在……时” or “若欲……需要……”, or rewrite them equivalently. Do not replace them with an unconditional action; identify missing conditions when they are unspecified.
+- **Use operational language:** State the required handling directly and remove admonitory wording such as “切记”, while retaining necessary prohibitions and technical conclusions. Keep “不可互相替代” when it expresses a real restriction. Use “两者独立记录并平行分析” only when the procedure calls for it; this does not convey non-interchangeability.
+- **Choose precise verbs:** Simplify redundant phrasing such as “进行……的测量” to “测量……”. “测量” and “表征” are valid technical verbs. Use “标定”, “解耦”, “淬灭”, or “钳定” only when they describe the actual operation; do not substitute a different operation to sound more specialized.
 
-## 🔍 Before & After Showcase
-
-### 1. Academic Paper Introduction
-
-> **Defensive:**<br>
-> *This paper is not intended to provide a comprehensive theory of platform governance, but rather to examine one specific mechanism.*
->
-> **Direct & Stronger:**<br>
-> *This paper identifies a mechanism through which platform governance reshapes participation.*
-
-### 2. Methodological Innovation
-
-> **Defensive:**<br>
-> *While our sample cannot capture every real-world variation, we attempt to offer preliminary insights into model efficiency.*
->
-> **Direct & Stronger:**<br>
-> *On standard 32k-token benchmarks, SparseBlock achieves a 2.4× throughput improvement while maintaining baseline perplexity.*
-
-### 3. Research Grant & Project Aims
-
-> **Defensive:**<br>
-> *We certainly do not expect to solve urban heat mitigation overnight, but we hope our sensor framework might be somewhat helpful.*
->
-> **Direct & Stronger:**<br>
-> *This project deploys a 50-node thermal sensing network to provide neighborhood-scale surface temperature predictions within 0.5°C accuracy.*
-
-Explore full paragraph-level before/after case studies in [`examples/`](examples/):
-- 📄 [Academic Introduction](examples/academic-introduction.md)
-- 📊 [Methods & Contributions](examples/methods-and-contributions.md)
-- 📝 [Grant Proposals](examples/grant-proposal.md)
+The [Chinese guide](README.zh-CN.md#中文技术写作与-sop) includes the Chinese rules and examples.
 
 ---
 
-## 🚀 Quick Install & Setup
+## Comparative Analysis
 
-### 1. One-Line Install (Codex & Agent CLI)
+The table below contrasts conventional defensive drafts against revisions generated under the **Anti-Defensive Writing** paradigm across standard scholarly contexts.
 
-**macOS / Linux / WSL (sh):**
-```bash
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh
+| Rhetorical Dimension | Conventional Defensive Draft (❌) | Anti-Defensive Paradigm (✅) | Cognitive & Rhetorical Gain |
+| :--- | :--- | :--- | :--- |
+| **Introduction & Hook** | *"Although it is beyond the scope of this modest preliminary inquiry to resolve platform governance debates, it might tentatively be suggested..."* | *"Algorithmic content moderation significantly reshapes user participation in online communities."* | **Immediate Empirical Focus**: Commands reader attention by stating observed phenomena without evasive preamble. |
+| **Scope Delimitation** | *"We do not claim that our sample is representative of all municipal governance systems across regions."* | *"The analysis focuses on urban governance cases across three institutional jurisdictions from 2015 to 2023."* | **Positive Boundary Definition**: Conveys exact empirical boundaries without defensive self-deprecation. |
+| **Uncertainty Calibration** | *"These experimental outcomes could potentially indicate that variable $X$ might possibly influence metric $Y$."* | *"The evidence indicates that $X$ influences $Y$ under the examined observational conditions."* | **Elimination of Hedge Stacking**: Replaces multi-layered modal qualifiers with calibrated, evidence-bounded assertion. |
+| **Metric & Trade-off Framing** | *"The model achieved lower accuracy (89% vs. 90%), indicating clear performance shortcomings."* | *"The method reduces inference latency from 100 ms to 60 ms with 89% accuracy (compared to 90% for the baseline)."* | **Objective Trade-off Exposure**: States system trade-offs neutrally without pathologizing valid Pareto frontiers. |
+| **Authorial Modesty** | *"This study merely attempts to take a minor exploratory step toward understanding..."* | *"This study establishes an empirical baseline for analyzing..."* | **Professional Authorial Posture**: Replaces ritual modesty with calm, objective scientific authority. |
+
+---
+
+## Rewrite Pipeline
+
+Revising text with Anti-Defensive Writing follows a formal 5-stage transformation pipeline:
+
+```
+┌────────────────────────────────────────────────────────┐
+│               Input: Defensive Academic Draft          │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Stage 1: Functional Diagnosis                         │
+│  Classify defensive units: Unnecessary Disclaimer vs.  │
+│  Necessary Scope vs. Methodological Constraint         │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Stage 2: Disclaimer Pruning                           │
+│  Strip uninformative disclaimers and preemptive        │
+│  apologies that contribute no empirical value          │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Stage 3: Positive Projection                          │
+│  Convert negative denials ("Not X") into               │
+│  explicit positive definitions ("Focuses on Y")        │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Stage 4: Uncertainty Calibration                      │
+│  Collapse stacked modal hedges ("may potentially");    │
+│  ground uncertainty in concrete observational limits   │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  Stage 5: Structural Realignment                       │
+│  Anchor paragraphs with decisive topic sentences;      │
+│  isolate true constraints to dedicated sections        │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│          Output: Assertive, High-Signal Paper          │
+└────────────────────────────────────────────────────────┘
 ```
 
-**Windows (PowerShell):**
+---
+
+## Quickstart
+
+### Deployment Footprint
+
+The installation is engineered to be **minimal, hermetic, and zero-overhead**. Only a single specification file is deployed into your target skills environment:
+
+```text
+<skills-directory>/
+└── anti-defensive-writing/
+    └── SKILL.md
+```
+
+> **Zero Runtime Dependencies**: The installer streams `SKILL.md` directly. It does not clone repository archives, nor does it install README files, scripts, images, test suites, or auxiliary configurations. It requires no Git, Python, Node.js, compilation toolchains, or package managers.
+
+### Supported Environments
+
+| Target Environment | Global (User-Level) Destination | Local (Project-Level) Destination |
+| :--- | :--- | :--- |
+| **Codex** (Recommended) | `~/.agents/skills` | `.agents/skills` |
+| **Codex** (Legacy Runtime) | `~/.codex/skills` | `.codex/skills` |
+| **Claude Code** | `~/.claude/skills` | `.claude/skills` |
+
+*Note: `~` denotes your user home directory. Relative paths resolve from the execution directory. For project-level installations, execute commands directly from the project root.*
+
+---
+
+### Installation via Shell (macOS / Linux / WSL)
+
+Choose **one** command corresponding to your target agent:
+
+#### Standard Codex (`~/.agents/skills`)
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills"
+```
+
+#### Legacy Codex (`~/.codex/skills`)
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.codex/skills"
+```
+
+#### Claude Code (`~/.claude/skills`)
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.claude/skills"
+```
+
+*For project-level installation, pass a relative destination such as `--dest ".agents/skills"`, `--dest ".codex/skills"`, or `--dest ".claude/skills"`.*
+
+---
+
+### Installation via PowerShell 7 (Windows)
+
+Open **PowerShell 7** (`pwsh`). Configure `$skillsDir` to your target directory, then execute:
+
 ```powershell
-irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex
+$skillsDir = "$HOME/.agents/skills"
+$installSkill = [scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1'))
+& $installSkill -Dest $skillsDir
 ```
 
-*Custom skills directory:*
-```bash
-# sh
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>
+*For alternative environments, set `$skillsDir` to `"$HOME/.codex/skills"` or `"$HOME/.claude/skills"`. For project-level scope, specify `".agents/skills"` from your project root.*
 
-# PowerShell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest <skills-dir>
+---
+
+### Upgrades & Version Pinning
+
+Existing installations remain untouched unless explicitly updated using `--force` (Shell) or `-Force` (PowerShell). Atomic replacement guarantees that a failed network download will never corrupt an existing installation.
+
+```sh
+# Shell: Force update to latest main
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills" --force
+
+# Shell: Pin to specific commit, tag, or branch
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills" --ref <commit-hash>
+```
+
+```powershell
+# PowerShell: Force update
+& $installSkill -Dest $skillsDir -Force
+
+# PowerShell: Pin reference
+& $installSkill -Dest $skillsDir -Ref <commit-hash> -Force
+```
+
+### Manual Installation
+
+To install manually without automated scripts, create `anti-defensive-writing` inside your chosen skills directory and save the raw [`SKILL.md`](https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/SKILL.md) directly:
+
+```sh
+mkdir -p ~/.agents/skills/anti-defensive-writing
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/SKILL.md -o ~/.agents/skills/anti-defensive-writing/SKILL.md
 ```
 
 ---
 
-### 2. Universal Setup for Web AI & Code Editors
+## Agent Interface
 
-#### 💬 ChatGPT / Claude Web (Custom Instructions / Projects)
-Paste this into your **Custom Instructions**, **System Prompt**, or **Project Knowledge**:
+Once installed, invoke the skill directly inside your agent session:
+
+### Codex CLI
+```text
+$anti-defensive-writing Revise these paragraphs. Remove unnecessary defensive language and preserve the evidence and necessary qualifications.
+```
+
+### Claude Code CLI
+```text
+/anti-defensive-writing Revise these paragraphs. Remove unnecessary defensive language and preserve the evidence and necessary qualifications.
+```
+
+### Interactive Web Interfaces (ChatGPT / Claude / Gemini)
+For web-based LLM sessions without local file system access, attach or paste [SKILL.md](SKILL.md) directly as custom system instructions or context prompt.
+
+### Recommended Prompt Patterns
+
+<details>
+<summary><b>Pattern 1: Academic Paper Introduction & Hook</b></summary>
 
 ```text
-You are an expert editor specializing in Anti-Defensive Writing.
-When revising academic or professional text:
-1. Identify and eliminate defensive writing: unnecessary caveats, preemptive apologies, excessive modal hedging (may, might, could, potentially), and negative self-limiting statements.
-2. Lead with primary claims, contributions, and findings.
-3. Preserve necessary scientific precision, methodological constraints, and scope limitations, placing them in their proper analytical context without apologetic framing.
-4. Keep the prose direct, active, and claim-forward.
+$anti-defensive-writing Refactor the following academic introduction. Eliminate apologetic preambles, replace negative exclusions with positive scope definitions, and ensure the topic sentence leads directly with our core finding.
 ```
+</details>
 
-#### 💻 Cursor / Windsurf (`.cursorrules` / `.windsurfrules`)
-```markdown
-# Anti-Defensive Writing Rules
-- When writing or editing documentation, papers, or proposals, avoid defensive writing patterns.
-- Remove redundant disclaimers and hesitant hedging while preserving exact technical and methodological precision.
-- Follow the guidelines in SKILL.md.
-```
-
-#### 🛠️ Claude Code / CLI Agents (`CLAUDE.md`)
-```markdown
-## Writing Style
-- Apply Anti-Defensive Writing: write directly, state contributions first, and avoid apologetic caveats or vague hedges.
-```
-
----
-
-## 📖 How to Use
-
-### Step 1: Audit & Identify Issues
-Ask your AI agent to diagnose defensive writing patterns in your draft:
-```text
-$anti-defensive-writing Please review my draft and identify every instance of defensive writing, unnecessary caveats, and excessive hedging.
-```
-
-### Step 2: Review Findings
-Review the highlighted points. Differentiate between **unnecessary defensive padding** and **essential methodological scope conditions**.
-
-### Step 3: Revise with Precision
-Apply the anti-defensive rewrite pass:
-```text
-$anti-defensive-writing Based on the issues identified above, revise these paragraphs to make them direct and claim-forward while maintaining methodological precision.
-```
-
----
-
-## 📂 Repository Layout
+<details>
+<summary><b>Pattern 2: Methods & Contributions Statement</b></summary>
 
 ```text
-.
-|-- SKILL.md                 # Primary skill definition & prompt rules
-|-- README.md                # English documentation
-|-- README.zh-CN.md          # Chinese documentation
-|-- install.sh               # Unix installation script
-|-- install.ps1              # Windows PowerShell installation script
-|-- skill.json               # Package metadata for skill package managers
-|-- agents/
-|   `-- openai.yaml          # Agent configuration
-|-- assets/
-|   |-- cover-en.png         # English banner cover image
-|   |-- cover-zh-cn.png      # Chinese banner cover image
-|   |-- star-history.svg     # Star growth chart (light / dark themes)
-|   `-- star-history-dark.svg
-|-- examples/                # Real-world paragraph case studies
-|   |-- academic-introduction.md
-|   |-- grant-proposal.md
-|   `-- methods-and-contributions.md
-`-- skill/
-    `-- anti-defensive-writing/
-        |-- SKILL.md         # Mirrored clean installable skill
-        `-- agents/
-            `-- openai.yaml
+$anti-defensive-writing Review this contributions section. Remove self-undermining modesty, preserve all true experimental scope limits, and present our empirical trade-offs without defensive justification.
+```
+</details>
+
+<details>
+<summary><b>Pattern 3: Peer Review & Rebuttal Clarification</b></summary>
+
+```text
+$anti-defensive-writing Rewrite this rebuttal paragraph. Directly answer the reviewer's concern using observed experimental evidence. Do not concede imaginary weaknesses or use apologetic phrasing.
+```
+</details>
+
+---
+
+## Case Studies
+
+Empirical before-and-after transformations across common academic genres are cataloged in [`examples/`](examples/):
+
+* [**Academic Paper Introduction**](examples/academic-introduction.md): Transforming a hesitating, apologetic opening in platform governance into an evidence-forward hook.
+* [**Methods & Contributions**](examples/methods-and-contributions.md): Articulating experimental contributions and computational bottlenecks with calibrated objectivity.
+* [**Grant Proposal (NSF/NIH Style)**](examples/grant-proposal.md): Reframing tentative project aims into high-conviction, feasibility-grounded scientific objectives.
+
+---
+
+## Methodological Guardrails
+
+> [!IMPORTANT]
+> **Anti-Defensive Writing is NOT ungrounded hype.** It enforces strict scientific integrity constraints:
+>
+> 1. **No Hallucination of Evidence**: The skill strictly forbids fabricating facts, metrics, baselines, or mechanisms to make a sentence sound stronger.
+> 2. **No Causal Overreach**: Observational associations must never be transformed into causal assertions.
+> 3. **Preservation of Essential Boundaries**: Limitations critical to validity, ethics, safety, legal compliance, or replication must be preserved and clearly stated in their appropriate sections.
+
+---
+
+## Repository Layout
+
+```text
+anti-defensive-writing/
+├── SKILL.md                         # Authoritative skill specification (Rules of truth)
+├── skill/anti-defensive-writing/
+│   └── SKILL.md                     # Hermetic single-file installable payload
+├── README.md                        # English documentation & benchmark overview
+├── README.zh-CN.md                  # Simplified Chinese documentation
+├── install.sh                       # POSIX installer (macOS / Linux / WSL)
+├── install.ps1                      # Windows PowerShell 7 installer
+├── skill.json                       # Agent package manifest & metadata
+├── examples/                        # Academic case studies & qualitative evaluations
+│   ├── academic-introduction.md     # Paper introduction case study
+│   ├── methods-and-contributions.md # Methodology & contributions case study
+│   └── grant-proposal.md            # Research proposal case study
+├── assets/                          # Architecture schematics & figures
+│   ├── anti-defensive-writing-en.png
+│   └── anti-defensive-writing-zh-CN.png
+├── tests/                           # Installer verification & CI regression tests
+└── LICENSE                          # MIT License
+```
+
+*The mirror located at `skill/anti-defensive-writing/SKILL.md` is kept strictly identical to the root `SKILL.md` for tools requiring a directory-based skill format. When using third-party installers, point to `skill/anti-defensive-writing` rather than the repository root.*
+
+---
+
+## Citation
+
+If you utilize **Anti-Defensive Writing** in your academic workflow, manuscripts, or agentic systems, please cite this work:
+
+```bibtex
+@software{antidefensivewriting2026,
+  author       = {Sunlight and Contributors},
+  title        = {Anti-Defensive Writing: Calibrated Assertiveness & Positive Scope for Academic and Technical Prose},
+  year         = {2026},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://github.com/Kiterlin/anti-defensive-writing}}
+}
 ```
 
 ---
 
-## 🧪 Validation
+## License
 
-Verify skill metadata and mirror consistency:
-
-```bash
-# JSON validation
-python3 -c "import json; json.load(open('skill.json'))"
-
-# Mirror consistency check
-diff -u SKILL.md skill/anti-defensive-writing/SKILL.md
-diff -u agents/openai.yaml skill/anti-defensive-writing/agents/openai.yaml
-```
-
----
-
-## 📄 License
-
-Distributed under the [MIT License](LICENSE).
-
----
-
-## ⭐ Star History
-
-<p align="center">
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history.svg">
-      <img alt="Star history for Kiterlin/anti-defensive-writing — cumulative stars over time" src="assets/star-history.svg" width="80%">
-    </picture>
-  </a>
-</p>
-
-<p align="center">
-  <sub>If this skill sharpened your writing, a ⭐ helps other researchers find it.</sub>
-</p>
+This project is licensed under the [MIT License](LICENSE).

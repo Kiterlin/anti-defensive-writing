@@ -3,109 +3,94 @@ set -eu
 
 REPO="Kiterlin/anti-defensive-writing"
 REF="${REF:-main}"
+DEST="$HOME/.agents/skills"
 SKILL_NAME="anti-defensive-writing"
-SKILL_PATH="skill/anti-defensive-writing"
-DEST="${CODEX_HOME:-$HOME/.codex}/skills"
 FORCE=0
+REF_EXPLICIT=0
 
 usage() {
-  cat <<'EOF'
-Install anti-defensive-writing into an agent skills directory.
+  cat <<'HELP'
+Install only anti-defensive-writing/SKILL.md.
 
 Usage:
   ./install.sh [--dest DIR] [--ref REF] [--force]
 
 Options:
-  --dest DIR   Parent skills directory. Default: ${CODEX_HOME:-$HOME/.codex}/skills
-  --ref REF    Git ref to install from when downloading. Default: main
-  --force      Replace an existing anti-defensive-writing directory
+  --dest DIR   Parent skills directory. Default: ~/.agents/skills
+  --ref REF    Download from a branch, tag, or commit. Default: main
+  --force      Replace the existing skill folder with SKILL.md only
   --help       Show this help
 
 Examples:
-  ./install.sh
+  ./install.sh --dest ~/.agents/skills
   ./install.sh --dest ~/.codex/skills
-  curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh
-  curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest ~/.codex/skills
-EOF
+  ./install.sh --dest ~/.claude/skills
+  ./install.sh --dest .claude/skills
+HELP
 }
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
     --dest)
-      [ "$#" -ge 2 ] || { echo "Missing value for --dest" >&2; exit 2; }
+      [ "$#" -ge 2 ] && [ -n "$2" ] || { echo "Missing value for --dest" >&2; exit 2; }
       DEST=$2
       shift 2
       ;;
     --ref)
-      [ "$#" -ge 2 ] || { echo "Missing value for --ref" >&2; exit 2; }
+      [ "$#" -ge 2 ] && [ -n "$2" ] || { echo "Missing value for --ref" >&2; exit 2; }
       REF=$2
+      REF_EXPLICIT=1
       shift 2
       ;;
-    --force)
-      FORCE=1
-      shift
-      ;;
-    --help|-h)
-      usage
-      exit 0
-      ;;
-    *)
-      echo "Unknown option: $1" >&2
-      usage >&2
-      exit 2
-      ;;
+    --force) FORCE=1; shift ;;
+    --help|-h) usage; exit 0 ;;
+    *) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
   esac
 done
 
-copy_skill() {
-  src=$1
-  dest=$2
+case "$DEST" in
+  \~) DEST=$HOME ;;
+  \~/*) DEST="$HOME/${DEST#\~/}" ;;
+  -*) echo "Use an absolute path or prefix the destination with ./" >&2; exit 2 ;;
+esac
 
-  [ -f "$src/SKILL.md" ] || { echo "No SKILL.md found in $src" >&2; exit 1; }
-  mkdir -p "$dest"
+target="$DEST/$SKILL_NAME"
+if [ -L "$target" ]; then
+  echo "Destination is a symbolic link: $target. Choose another directory." >&2
+  exit 1
+fi
+if [ -e "$target" ] && [ "$FORCE" -ne 1 ]; then
+  echo "Destination already exists: $target. Use --force to replace the skill folder." >&2
+  exit 1
+fi
 
-  target="$dest/$SKILL_NAME"
-  if [ -e "$target" ]; then
-    if [ "$FORCE" -ne 1 ]; then
-      echo "Destination already exists: $target" >&2
-      echo "Use --force to replace it." >&2
-      exit 1
-    fi
-    rm -rf "$target"
+mkdir -p "$DEST"
+staging=$(mktemp -d "$DEST/.${SKILL_NAME}.tmp.XXXXXX")
+trap 'rm -rf "$staging"' 0
+trap 'exit 1' 1 2 15
+
+# A script piped into sh has no local source; download just the Markdown file.
+local_source=""
+if [ -f "$0" ] && [ "$REF_EXPLICIT" -eq 0 ] && [ "$REF" = main ]; then
+  script_dir=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+  if [ -f "$script_dir/SKILL.md" ]; then
+    local_source="$script_dir/SKILL.md"
   fi
-
-  staging="$dest/.${SKILL_NAME}.tmp.$$"
-  rm -rf "$staging"
-  mkdir -p "$staging"
-  cp -R "$src/." "$staging/"
-  mv "$staging" "$target"
-
-  echo "Installed $SKILL_NAME to $target"
-  echo "Restart your agent if it loads skills only at startup."
-}
-
-SCRIPT_DIR=$(CDPATH='' cd -- "$(dirname -- "$0")" 2>/dev/null && pwd || pwd)
-
-if [ -d "$SCRIPT_DIR/$SKILL_PATH" ]; then
-  copy_skill "$SCRIPT_DIR/$SKILL_PATH" "$DEST"
-  exit 0
 fi
 
-command -v curl >/dev/null 2>&1 || { echo "curl is required for remote install" >&2; exit 1; }
-command -v tar >/dev/null 2>&1 || { echo "tar is required for remote install" >&2; exit 1; }
-
-TMP_ROOT="${TMPDIR:-/tmp}/anti-defensive-writing-install.$$"
-trap 'rm -rf "$TMP_ROOT"' EXIT HUP INT TERM
-mkdir -p "$TMP_ROOT"
-
-ARCHIVE="$TMP_ROOT/source.tar.gz"
-URL="https://github.com/$REPO/archive/refs/heads/$REF.tar.gz"
-
-if ! curl -fsSL "$URL" -o "$ARCHIVE"; then
-  URL="https://github.com/$REPO/archive/$REF.tar.gz"
-  curl -fsSL "$URL" -o "$ARCHIVE"
+if [ -n "$local_source" ]; then
+  cp "$local_source" "$staging/SKILL.md"
+else
+  command -v curl >/dev/null 2>&1 || { echo "curl is required." >&2; exit 1; }
+  curl -fsSL "https://raw.githubusercontent.com/$REPO/$REF/SKILL.md" -o "$staging/SKILL.md"
 fi
 
-tar -xzf "$ARCHIVE" -C "$TMP_ROOT"
-SOURCE_ROOT=$(find "$TMP_ROOT" -mindepth 1 -maxdepth 1 -type d | head -n 1)
-copy_skill "$SOURCE_ROOT/$SKILL_PATH" "$DEST"
+IFS= read -r first_line < "$staging/SKILL.md"
+[ "$first_line" = '---' ] || { echo "Invalid SKILL.md: missing YAML frontmatter." >&2; exit 1; }
+
+# Download and validate before replacing an existing installation.
+if [ -e "$target" ]; then
+  rm -rf "$target"
+fi
+mv "$staging" "$target"
+printf 'Installed only %s/SKILL.md\n' "$target"

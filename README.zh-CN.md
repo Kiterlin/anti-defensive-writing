@@ -1,256 +1,344 @@
-<p align="center">
-  <img src="assets/cover-zh-cn.png" alt="Anti-Defensive Writing" width="100%">
-</p>
+<div align="center">
 
-<h1 align="center">Anti-Defensive Writing（去防御性写作）</h1>
+# Anti-Defensive Writing（反防御性写作）
+### 面向学术论文与专业文本的主动断言与严谨校准框架
+
+[![规范文档: SKILL.md](https://img.shields.io/badge/%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3-SKILL.md-blue.svg?style=flat-square)](SKILL.md)
+[![开源协议: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-green.svg?style=flat-square)](LICENSE)
+[![Agent: Codex](https://img.shields.io/badge/Agent-Codex-000000.svg?style=flat-square&logo=openai)](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
+[![Agent: Claude Code](https://img.shields.io/badge/Agent-Claude%20Code-d97706.svg?style=flat-square&logo=anthropic)](https://code.claude.com/docs/en/skills#choose-where-skills-load)
+[![运行环境](https://img.shields.io/badge/%E6%94%AF%E6%8C%81%E5%B9%B3%E5%8F%B0-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg?style=flat-square)](#快速安装--quickstart)
+[![语言支持](https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-English%20%7C%20%E4%B8%AD%E6%96%87-blueviolet.svg?style=flat-square)](#)
 
 <p align="center">
-  <strong>以坚定、直接、精准的姿态写作。</strong><br>
-  开源 AI Agent 技能与提示词规范，专用于消除学术论文、课题申报与专业写作中冗余的犹豫措辞、辩解式免责与消极自我限制。
-</p>
-
-<p align="center">
-  <a href="README.md">🌐 English README</a>
-  ·
-  <a href="#-痛点解析什么是防御性写作">痛点解析</a>
-  ·
-  <a href="#-核心写作原则">核心原则</a>
-  ·
-  <a href="#-经典案例对比">案例对比</a>
-  ·
-  <a href="#-使用流程">使用流程</a>
-  ·
-  <a href="#-快速安装与接入">快速安装</a>
-  ·
-  <a href="#-详细案例库">案例库</a>
+  <a href="#摘要--abstract"><b>摘要</b></a> •
+  <a href="#核心原则--core-principles"><b>核心原则</b></a> •
+  <a href="#对比矩阵--comparative-analysis"><b>对比矩阵</b></a> •
+  <a href="#重写管线--rewrite-pipeline"><b>重写管线</b></a> •
+  <a href="#快速安装--quickstart"><b>快速安装</b></a> •
+  <a href="#调用指南--agent-interface"><b>调用指南</b></a> •
+  <a href="#案例库--case-studies"><b>案例库</b></a> •
+  <a href="#引用--citation"><b>BibTeX</b></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Kiterlin/anti-defensive-writing/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Kiterlin/anti-defensive-writing?style=flat&color=yellow"></a>
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-101820">
-  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-2C7A66">
-  <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue">
+  <a href="README.md"><b>English</b></a> | <b>简体中文</b>
 </p>
 
 ---
 
-## 🎯 痛点解析：什么是防御性写作？
+<p align="center">
+  <img src="assets/anti-defensive-writing-zh-CN.png" width="92%" alt="反防御性写作范式" />
+</p>
+<p align="center">
+  <em><b>图 1：反防御性写作的核心范式。</b> 彻底剥离前置道歉、重复免责与层叠对冲，恪守实证边界与真实不确定性，使学术与专业表达直接、从容、有力。</em>
+</p>
 
-在撰写学术论文、研究提案或专业报告时，作者往往出于对审稿人批评、读者误解或边界特例的过度担忧，而在论述中层层设防。这种**防御性写作（Defensive Writing）**会导致文稿冗长、气势减弱且重点模糊：
-
-- **以自我限制开篇**：在阐述创新前先声明无力解决的问题（如*“虽然本文无意提供完整的理论体系……”*）。
-- **层叠模糊犹豫词**：连续使用 *“可能、或许、在某种程度上潜在影响……”*，大幅削弱论证力度。
-- **消极否定式阐述**：频繁解释文章**不是**什么，而不是清晰阐明文章**提出**了什么。
-- **分散论证重点**：在引言或结论中过早、过度堆叠道歉式免责，掩盖了核心证据与贡献。
-
-**Anti-Defensive Writing** 帮助作者将犹豫不决的防卫性初稿转化为**论点鲜明、逻辑自信、直奔主题**的专业文本，同时严谨保留方法论、数据范畴和伦理安全所必需的客观精度。
+</div>
 
 ---
 
-## ⚖️ 常见模式与修改方向
+## 摘要 / Abstract
 
-| 常见防御性模式（不推荐） | 去防御性改写方向（推荐） |
-| :--- | :--- |
-| **预设辩解式免责**<br>*“本文无意提供一套完整的理论，仅探讨……”* | **直陈核心贡献**<br>*“本文阐明了治理机制重塑用户参与的具体路径。”* |
-| **以局限性作为段落开篇**<br>*“尽管本研究的样本受限于 50 个节点……”* | **优先呈现核心发现**<br>*“在 50 个基准节点测试中，该系统将响应延迟降低了 34%。”* |
-| **犹豫词层叠堆砌**<br>*“数据可能在某种程度上潜在暗示 X 或许影响 Y。”* | **精准定标证据力度**<br>*“实证数据表明，X 在此类场景下显著影响 Y。”* |
-| **消极否定式框架**<br>*“我们并非主张单一政策即可决定最终结果。”* | **积极阐明交互机制**<br>*“政策执行效果取决于制度设计与行政能力的协同交互。”* |
+> **摘要** — 学术论文、科研基金申请书与专业技术文本的表达力度，常被广泛存在的**防御性写作（Defensive Writing）**所严重削弱：作者习惯性采用前置道歉、重复免责声明、层叠模态对冲词（Modal Hedges）以及自我贬低式铺垫。这些写法虽意在规避审稿人可能的潜在质疑，却在实践中稀释了实证发现的强度，遮蔽了研究的核心创新贡献。
+>
+> **Anti-Defensive Writing（反防御性写作）** 构建了一套可供大模型与智能体执行的系统性规则框架：在坚决捍卫方法学严谨性、实证范围与安全法律底线的前提下，系统性诊断并剔除文字中的防御性认知开销；将“消极推诿式限定”重构为“正向范围界定”，并将不确定性精准锚定至可检验的实验事实。本框架帮助研究人员与技术创作者以从容客观的学术权威姿态，呈现高信噪比的主线论述。
+
+完整技术规则与多语言规范详见 [**SKILL.md**](SKILL.md)（依次包含英文核心规则、英文扩充规则、中文核心规则与中文扩充规则）。
 
 ---
 
-## 💡 核心写作原则
+## 核心原则 / Core Principles
 
-1. **核心论点先行（Lead with the Claim）**：段落以核心发现或主张切入，拒绝以辩解性铺垫开头。
-2. **正面界定范围（Positive Scope）**：直接阐明研究“分析了什么、解释了什么、对比了什么”，而非反复声明“没做什么”。
-3. **保留必要精度（Preserve Precision）**：真实的方法约束、样本边界与假设条件，应客观放置于研究方法（Methods）或局限性讨论（Limitations）章节中，避免在摘要与引言中零散道歉。
-4. **以证据定标，而非以道歉减压**：通过客观的数据边界与逻辑论证界定结论范围，而非依赖虚弱的犹豫词。
+本框架确立了四大支撑基石，指导从防御性回避走向主动性实证论证：
+
+| 原则维度 | 学术姿态 | 操作准则 |
+| :--- | :--- | :--- |
+| **🎯 观点直接前置** | 主动·清晰 | 段落与贡献陈述直接以实证发现和理论论点破题，坚决杜绝以局限性或退让性从句作为开头。 |
+| **📐 正向界定范围** | 建设性·有界 | 明确陈述本研究**具体分析、测试与解释了什么**，彻底摒弃习惯性的“我们并不声称……”否定句式。 |
+| **⚖️ 精准校准不确定性** | 严谨·客观 | 严格区分必要的方法局限与怯懦的词汇堆叠（如“或许可能潜在提示”）；不确定性必须直接溯源至具体的研究设计边界。 |
+| **🏗️ 篇章结构解耦** | 模块化·聚焦 | 真实的方法局限归位至专门章节（方法、讨论或局限），避免在摘要、引言、贡献点与结论中反复稀释主线。 |
 
 ---
 
 ## 中文技术写作与 SOP
 
-- **直接呈现方案**：写明操作、参数、前置条件和结果。删除“这回答了不同问题”“服从于XX条件”“用于阐明机制”等解释写法的元叙述。
-- **明确技术前提**：将“仅在……时”“若欲……需要……”“在条件允许时”等防御性套话改为“标定前提：……”等具体条件，或直接写执行动作。
-- **采用 SOP 语言**：将“不可互相替代”“切记不可……”等说教式指令改为操作规范，如“两者独立记录并平行分析”。
-- **使用专业技术动词**：将“进行……的测量”“关于……的表征”等空泛表达改为与操作吻合的动词，如“标定”“解耦”“淬灭”“钳定”。
+适用于中文技术方案、SOP、报告和演示文稿。
+
+改写只消除冗余和说教语气，必须保留原文的技术含义、适用条件、禁止事项与操作目的；不得为追求简洁或专业感改变操作含义。
+
+- **直接呈现方案**：写明操作、参数、前置条件和结果。删除不提供实质信息的写作说明；“用于阐明机制”等表述若说明真实研究目的，应予保留。
+- **明确技术前提**：将“在条件允许时”等含糊表达改为原文有依据的具体前提，如“标定前提：……”。“仅在……时”“若欲……需要……”若承载必要条件，应保留或等义改写，不得直接改成执行动作而丢失限制；条件不明时应指出缺失信息。
+- **采用 SOP 语言**：直接说明操作规范，删去“切记”等说教语气，同时保留必要的禁止事项和技术结论。“不可互相替代”若表达真实限制，应保留；“两者独立记录并平行分析”仅在符合原操作要求时使用，不能替代不可互换的结论。
+- **使用准确技术动词**：将“进行……的测量”等冗余表达简化为“测量……”。“测量”“表征”本身就是准确动词；只有原操作确实对应“标定”“解耦”“淬灭”或“钳定”时才使用这些词，不得为显得专业而替换操作含义。
 
 ---
 
-## 🔍 经典案例对比
+## 对比矩阵 / Comparative Analysis
 
-### 1. 学术论文引言（Academic Introduction）
+下表展示了学术写作中典型防御性表达与应用 **Anti-Defensive Writing** 范式后的重构对比：
 
-> **防御性写法：**<br>
-> *本文无意提供一套完整的平台治理理论体系，仅旨在探讨其中的某一具体机制。*
->
-> **直接有力写法：**<br>
-> *本文阐明了平台治理重塑用户参与的具体机制。*
-
-### 2. 方法创新与实验对比（Methods & Contributions）
-
-> **防御性写法：**<br>
-> *尽管我们的评估无法涵盖所有真实场景的变体，但我们试图为模型效率提升提供初步探索。*
->
-> **直接有力写法：**<br>
-> *在标准 32k 序列基准测试中，SparseBlock 在保持基础困惑度的同时实现了 2.4 倍的推理吞吐提升。*
-
-### 3. 课题申报与研究目标（Grant Proposals）
-
-> **防御性写法：**<br>
-> *我们当然不期望能一举解决城市热岛效应，但我们希望该监测框架或许能为城市规划提供些许帮助。*
->
-> **直接有力写法：**<br>
-> *本项目通过布设 50 个微型传感节点，为城市规划提供精度达 0.5°C 的街区级地表温度预测模型。*
-
-查看更多涵盖完整段落的典型场景修改案例，请访问 [`examples/`](examples/) 目录：
-- 📄 [学术论文引言案例](examples/academic-introduction.md)
-- 📊 [研究方法与创新论述案例](examples/methods-and-contributions.md)
-- 📝 [课题申报与项目规划案例](examples/grant-proposal.md)
+| 表达维度 | 传统防御性草稿（❌） | 反防御性重构范式（✅） | 认知增益与修辞机制 |
+| :--- | :--- | :--- | :--- |
+| **引言破题** | “虽然解决平台治理的长期争端显然超出了本项初步探索的范围，但或许可以谨慎地指出……” | “算法内容治理显著重塑了在线社区的用户参与生态。” | **直击核心事实**：破除虚泛铺垫与免责前缀，第一时间建立读者认知锚点。 |
+| **研究范围界定** | “我们并不声称本研究所选取的案例能够代表所有区域的城市治理环境。” | “本文重点分析 2015 至 2023 年间三种不同制度环境下的城市治理案例。” | **正向边界界定**：以确定的时空与制度条件界定范围，替代消极自我贬低。 |
+| **不确定性与对冲** | “这些实验结果在某种程度上或许可能潜在提示 $X$ 对 $Y$ 具有一定影响。” | “实验证据表明，在所观测的条件下 $X$ 对 $Y$ 产生显著影响。” | **剔除层叠对冲**：压缩冗余模态动词，将结论严格锚定于已验证的观测事实。 |
+| **指标与权衡呈现** | “该模型的准确率相对较低（89% 对比基线的 90%），表明本方法仍存在明显局限。” | “该方法将推理延迟从 100 ms 显著降低至 60 ms，准确率为 89%（基线为 90%）。” | **客观陈述权衡**：客观呈现系统在 Pareto 前沿上的性能取舍，避免将合理代价病理化。 |
+| **中文仪式化谦辞** | “本文仅在两个数据集上做了初步尝试，所获结论只能提供非常有限的参考。” | “本文在两个标准基准数据集上系统评估了该方法的性能表现。” | **确立专业文风**：剔除习惯性客套与自轻表达，以平实严谨的口吻呈现工作事实。 |
 
 ---
 
-## 🚀 快速安装与接入
+## 重写管线 / Rewrite Pipeline
 
-### 1. 一键安装（Codex / CLI Agent 环境）
+遵循技能规约的重写过程遵循严密的 5 阶段算法工作流：
 
-**macOS / Linux / WSL (sh):**
-```bash
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh
+```
+┌────────────────────────────────────────────────────────┐
+│               输入：包含防御性赘述的学术初稿              │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  阶段 1：功能诊断（Functional Diagnosis）              │
+│  识别句子属性：非必要免责 / 必要范围界定 / 方法学真实局限  │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  阶段 2：剔除修剪（Disclaimer Pruning）                │
+│  坚决删除无法增加证据、逻辑与认知价值的前置铺垫与道歉     │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  阶段 3：正向投射（Positive Projection）               │
+│  将“非 X 否定句”重塑为清晰的“专注 Y 正向主张”           │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  阶段 4：不确定性校准（Uncertainty Calibration）        │
+│  剥离层叠对冲（或许/可能/潜在），将疑问锚定至具体设计边界 │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│  阶段 5：结构对齐（Structural Realignment）             │
+│  以强主题句重筑段落主线，真实限制归入专门章节统一呈现     │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│          输出：直接、从容、高信噪比的学术正文            │
+└───────────────────────────┘
 ```
 
-**Windows (PowerShell):**
+---
+
+## 快速安装 / Quickstart
+
+### 极简部署架构
+
+安装过程设计为**单文件、零侵入、零依赖**。智能体技能目录仅部署单个核心规则文件：
+
+```text
+<技能目录>/
+└── anti-defensive-writing/
+    └── SKILL.md
+```
+
+> **零运行时环境依赖**：安装脚本直接流式拉取 `SKILL.md`，不会下载仓库源码包，亦不会在技能目录残留 README、安装脚本、图片、测试文件或智能体配置。无需 Git、Python、Node.js、编译工具链或任何包管理器。
+
+### 支持目录矩阵
+
+| 目标智能体 | 全局（用户级）安装目录 | 局部（项目级）安装目录 |
+| :--- | :--- | :--- |
+| **Codex**（官方最新推荐） | `~/.agents/skills` | `.agents/skills` |
+| **Codex**（旧版规范） | `~/.codex/skills` | `.codex/skills` |
+| **Claude Code** | `~/.claude/skills` | `.claude/skills` |
+
+*注：`~` 代表当前用户主目录。相对路径从执行命令的目录开始计算；若要在当前项目中生效，请在项目根目录下执行。*
+
+---
+
+### macOS / Linux / WSL 安装
+
+根据所使用的智能体，在终端中**任选一条命令**运行：
+
+#### 标准 Codex 环境（`~/.agents/skills`）
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills"
+```
+
+#### 旧版 Codex 环境（`~/.codex/skills`）
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.codex/skills"
+```
+
+#### Claude Code 环境（`~/.claude/skills`）
+```sh
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.claude/skills"
+```
+
+*若仅需安装在当前项目，将目标路径改为相对路径即可，例如 `--dest ".agents/skills"` 或 `--dest ".claude/skills"`。*
+
+---
+
+### Windows 安装
+
+在 Windows 上打开 **PowerShell 7**（`pwsh`），设置 `$skillsDir` 并执行：
+
 ```powershell
-irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1 | iex
+$skillsDir = "$HOME/.agents/skills"
+$installSkill = [scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1'))
+& $installSkill -Dest $skillsDir
 ```
 
-*自定义目标安装路径：*
-```bash
-# sh
-curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest <skills-dir>
+*如需配置其他环境，可将 `$skillsDir` 改为 `"$HOME/.codex/skills"` 或 `"$HOME/.claude/skills"`；项目级安装在根目录使用 `".agents/skills"` 即可。安装逻辑在内存中运行，不留存临时脚本。*
 
-# PowerShell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.ps1))) -Dest <skills-dir>
+---
+
+### 升级与版本固定
+
+已有安装默认受到保护，不会被静默篡改。添加 `--force`（Shell）或 `-Force`（PowerShell）可执行原子替换。若网络下载中断，现有文件完好无损。
+
+```sh
+# Shell：强制更新到最新主分支版本
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills" --force
+
+# Shell：固定安装特定提交哈希、标签或分支
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/install.sh | sh -s -- --dest "$HOME/.agents/skills" --ref <commit-hash>
+```
+
+```powershell
+# PowerShell：强制覆盖升级
+& $installSkill -Dest $skillsDir -Force
+
+# PowerShell：指定版本引用
+& $installSkill -Dest $skillsDir -Ref <commit-hash> -Force
+```
+
+### 手动安装
+
+无需脚本即可纯手动配置：在目标技能路径下建立 `anti-defensive-writing` 目录，将原始 [**SKILL.md**](https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/SKILL.md) 保存为该目录下的 `SKILL.md` 即可：
+
+```sh
+mkdir -p ~/.agents/skills/anti-defensive-writing
+curl -fsSL https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/SKILL.md -o ~/.agents/skills/anti-defensive-writing/SKILL.md
 ```
 
 ---
 
-### 2. Web 端与其他 Agent 快速接入
+## 调用指南 / Agent Interface
 
-#### 💬 ChatGPT / Claude 网页端（自定义指令 / Projects）
-将以下提示词复制到 **Custom Instructions（自定义指令）**、**System Prompt（系统提示词）** 或 **Project Knowledge（项目知识库）** 中：
+安装完成后，在智能体对话中直接唤醒：
+
+### Codex CLI
+```text
+$anti-defensive-writing 修改下面的段落，删掉多余的防御性表达，保留必要限定，不增加原文没有的事实。
+```
+
+### Claude Code CLI
+```text
+/anti-defensive-writing 修改下面的段落，删掉多余的防御性表达，保留必要限定，不增加原文没有的事实。
+```
+
+### 网页对话界面（ChatGPT / Claude / Gemini）
+对于无法直接读取本地文件系统的 Web 网页端，可直接将 [SKILL.md](SKILL.md) 作为 Prompt 设定或上下文上传附加。
+
+### 学术场景推荐 Prompt 模板
+
+<details>
+<summary><b>模板 1：论文引言与破题段落重构</b></summary>
 
 ```text
-你是一位专注于「去防御性写作（Anti-Defensive Writing）」的专业编辑。
-在审阅或修改学术论文及专业文档时：
-1. 识别并去除防御性表达：不必要的过度免责声明、预设反驳的道歉式措辞、冗余的模态犹豫词（可能、或许、潜在）以及自我贬低的消极限制。
-2. 优先陈述核心论点、创新贡献与研究发现。
-3. 准确保留必要的科学严谨性、方法边界与适用范围，但将其客观置于恰当的分析语境中，而非作为辩解性铺垫。
-4. 保持语言直接、清晰、有力且以论点为核心（claim-forward）。
+$anti-defensive-writing 重构以下论文引言段落。去除开篇的退缩式辩解，将否定性排除转换为正向的研究范围界定，确保主题句直接以我们的核心实验发现破题。
 ```
+</details>
 
-#### 💻 Cursor / Windsurf 编辑器（`.cursorrules` / `.windsurfrules`）
-在项目根目录的 `.cursorrules` 或 `.windsurfrules` 中添加：
-
-```markdown
-# 去防御性写作规范（Anti-Defensive Writing）
-- 在撰写或修改文档、学术内容或项目方案时，避免防御性写作模式。
-- 消除冗余的免责与犹豫表达，同时保留客观的技术与方法精度。
-- 参考并遵循 SKILL.md 中的去防御性写作准则。
-```
-
-#### 🛠️ Claude Code / CLI Agent（`CLAUDE.md`）
-在项目的 `CLAUDE.md` 中添加：
-
-```markdown
-## 写作风格指南
-- 遵循去防御性写作原则（Anti-Defensive Writing）：表达直接有力，优先呈现核心贡献，避免辩解式免责与模糊的犹豫措辞。
-```
-
----
-
-## 📖 使用流程
-
-### 第 1 步：诊断识别问题
-调用 Agent 对草稿进行防御性写作专项审查：
-```text
-$anti-defensive-writing 请审查我的论文草稿，列出其中存在的防御性写作、冗余免责与过度犹豫表达。
-```
-
-### 第 2 步：审阅诊断清单
-逐条查看 Agent 列出的问题清单，区分哪些属于**纯辩解式冗余**，哪些属于**必须保留的研究范畴与精度约束**。
-
-### 第 3 步：精准重构修改
-基于分析结果，让 Agent 执行去防御性重构：
-```text
-$anti-defensive-writing 请根据刚才列出的问题，修改这些段落和语句，去除不必要的防御性表达，同时保留必要的方法限制与客观严谨度。
-```
-
----
-
-## 📂 仓库结构
+<details>
+<summary><b>模板 2：方法论与创新贡献陈述</b></summary>
 
 ```text
-.
-|-- SKILL.md                 # 核心 Skill 规则定义与提示词标准
-|-- README.md                # 英文说明文档
-|-- README.zh-CN.md          # 中文说明文档
-|-- install.sh               # Unix/macOS 安装脚本
-|-- install.ps1              # Windows PowerShell 安装脚本
-|-- skill.json               # Skill 规范元数据
-|-- agents/
-|   `-- openai.yaml          # Agent 配置文件
-|-- assets/
-|   |-- cover-en.png         # 英文封面图片
-|   |-- cover-zh-cn.png      # 中文封面图片
-|   |-- star-history.svg     # Star 增长曲线图（亮色 / 暗色）
-|   `-- star-history-dark.svg
-|-- examples/                # 实战段落案例库
-|   |-- academic-introduction.md
-|   |-- grant-proposal.md
-|   `-- methods-and-contributions.md
-`-- skill/
-    `-- anti-defensive-writing/
-        |-- SKILL.md         # 镜像纯净版 Skill
-        `-- agents/
-            `-- openai.yaml
+$anti-defensive-writing 审核这部分学术贡献陈述。剔除过度的自我贬抑与谦辞，在完整保留真实实验适用条件的前提下，客观、平静地阐明我们在性能与算力消耗间的权衡。
+```
+</details>
+
+<details>
+<summary><b>模板 3：同行评审与 Rebuttal 辩驳澄清</b></summary>
+
+```text
+$anti-defensive-writing 重写这段审稿意见答复（Rebuttal）。直接依据现有观测数据回应审稿人的质疑，不主动割让未经证实的缺陷，杜绝道歉与退缩式措辞。
+```
+</details>
+
+---
+
+## 案例库 / Case Studies
+
+仓库提供针对典型学术场景的端到端修改案例，完整收录于 [`examples/`](examples/)：
+
+* [**论文引言案例（Academic Introduction）**](examples/academic-introduction.md)：将平台治理研究中畏缩、充满免责声明的引言重构为实证先行的有力论述。
+* [**方法与贡献案例（Methods & Contributions）**](examples/methods-and-contributions.md)：以客观严谨的语气呈现核心贡献点与计算瓶颈的合理权衡。
+* [**科研基金申请案例（Grant Proposal）**](examples/grant-proposal.md)：将犹豫试探的研究目标重构为论证坚实、可行性明确的学术攻坚规划。
+
+---
+
+## 方法学边界与严谨性公理 / Methodological Guardrails
+
+> [!IMPORTANT]
+> **反防御性写作绝非无事实依据的浮夸宣传。** 本技能坚守最严苛的学术道德底线：
+>
+> 1. **严禁虚构实证事实**：绝不能为了让文风显得强势有力而擅自捏造数据、基线、实验结果或机制。
+> 2. **严禁相关夸大为因果**：观测性分析中的统计关联（Association）绝不可篡改为因果主张（Causation）。
+> 3. **坚决保留关键限定条件**：涉及科学真实性、伦理合规、法务安全与可复现性的必要局限必须保留，并置于相应的方法或局限章节中清晰交代。
+
+---
+
+## 仓库全景结构 / Repository Layout
+
+```text
+anti-defensive-writing/
+├── SKILL.md                         # 技能规约正文（唯一权威源）
+├── skill/anti-defensive-writing/
+│   └── SKILL.md                     # 供目录级安装工具读取的单文件镜像
+├── README.md                        # 英文主文档与学术对比基准
+├── README.zh-CN.md                  # 简体中文学术文档
+├── install.sh                       # POSIX 安装脚本（macOS / Linux / WSL）
+├── install.ps1                      # Windows PowerShell 7 安装脚本
+├── skill.json                       # 技能包元数据与包描述
+├── examples/                        # 经典学术写作重构案例库
+│   ├── academic-introduction.md     # 论文引言案例
+│   ├── methods-and-contributions.md # 方法与贡献案例
+│   └── grant-proposal.md            # 基金申请书案例
+├── assets/                          # 框架全景与技术图解
+│   ├── anti-defensive-writing-en.png
+│   └── anti-defensive-writing-zh-CN.png
+├── tests/                           # 安装器行为测试与持续集成验证
+└── LICENSE                          # MIT 开源许可证
+```
+
+*`skill/anti-defensive-writing/SKILL.md` 镜像与根目录正文始终保持一致，专供按目录抓取技能的工具使用。使用第三方安装程序时，请选择 `skill/anti-defensive-writing` 子目录。*
+
+---
+
+## 引用 / Citation
+
+如果您在学术研究、论文撰写或智能体工作流中使用了 **Anti-Defensive Writing**，欢迎按如下格式引用：
+
+```bibtex
+@software{antidefensivewriting2026,
+  author       = {Sunlight and Contributors},
+  title        = {Anti-Defensive Writing: Calibrated Assertiveness & Positive Scope for Academic and Technical Prose},
+  year         = {2026},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://github.com/Kiterlin/anti-defensive-writing}}
+}
 ```
 
 ---
 
-## 🧪 验证与测试
+## 开源协议 / License
 
-验证元数据完整性与镜像文件一致性：
-
-```bash
-# JSON 语法验证
-python3 -c "import json; json.load(open('skill.json'))"
-
-# 镜像文件一致性校验
-diff -u SKILL.md skill/anti-defensive-writing/SKILL.md
-diff -u agents/openai.yaml skill/anti-defensive-writing/agents/openai.yaml
-```
-
----
-
-## 📄 开源许可
-
-本项目遵循 [MIT License](LICENSE) 开源协议。
-
----
-
-## ⭐ Star 增长趋势
-
-<p align="center">
-  <a href="https://github.com/Kiterlin/anti-defensive-writing/stargazers">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kiterlin/anti-defensive-writing/main/assets/star-history.svg">
-      <img alt="Kiterlin/anti-defensive-writing 的 Star 累计增长曲线" src="assets/star-history.svg" width="80%">
-    </picture>
-  </a>
-</p>
-
-<p align="center">
-  <sub>如果这套规范让你的表达更有力，欢迎点亮 ⭐，让更多研究者发现它。</sub>
-</p>
+本项目基于 [MIT License](LICENSE) 开源。
