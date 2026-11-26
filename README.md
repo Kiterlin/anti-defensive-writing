@@ -10,6 +10,8 @@
 [![Environment](https://img.shields.io/badge/Environment-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg?style=flat-square)](#quickstart)
 [![Language](https://img.shields.io/badge/Language-English%20%7C%20%E4%B8%AD%E6%96%87-blueviolet.svg?style=flat-square)](#)
 
+[![Deploy on MindPal](https://mindpal.space/badges/deploy-on-mindpal.svg)](https://mindpal.space/skills/anti-defensive-writing?utm_source=github&utm_medium=readme_button)
+
 <p align="center">
   <a href="#abstract"><b>Abstract</b></a> •
   <a href="#core-principles"><b>Core Principles</b></a> •
